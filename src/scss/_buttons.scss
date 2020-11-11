@@ -1,0 +1,45 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    color: $colorWhite;
+    font-size: 22px;
+    line-height: 33px;
+    background: $colorOrange;
+    text-decoration: none;
+    transition: 0.1s ease;
+    border: 2px solid $colorOrange;
+    box-shadow: 0px 5px 10px rgba(29, 43, 63, 0.1);
+    border-radius: 30px;
+    @include desktop {
+        &:hover {
+            background: #FF9900;
+        }
+    }
+    &.blue {
+        background: $colorBlue;
+        border: 2px solid $colorBlue;
+        @include desktop {
+            &:hover {
+                background: $colorBlueDark;
+                border: 2px solid $colorBlueDark;
+            }
+        }
+    }
+    &.white {
+        background: $colorWhite;
+        border: 2px solid $colorBlue;
+        color: $colorText;
+        @include desktop {
+            &:hover {
+                border: 2px solid $colorBlueDark;
+            }
+        }
+    }
+    &.small {
+        padding: 8px 20px;
+        box-shadow: 0px 5px 10px rgba(29, 43, 63, 0.1);
+        border-radius: 30px;
+    }
+}
