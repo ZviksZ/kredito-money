@@ -5,6 +5,9 @@
     max-width: 534px;
     width: 100%;
     height: auto;
+    @include mobile {
+        padding: 27px 21px 32px;
+    }
     .calculator-item {
         position: relative;
         margin-bottom: 28px;
@@ -53,5 +56,8 @@
         .item + .item {
             margin-top: 2px;
         }
+    }
+    &.calculator-small {
+        max-width: 392px;
     }
 }

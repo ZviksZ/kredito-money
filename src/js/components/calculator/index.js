@@ -79,9 +79,6 @@ export class Calculator {
          prettify_enabled: true,
          prettify_separator: ' ',
          onChange: data => {
-            /* this.checkPriceVal(data.from + '');
-            mortgageSumInput[0].value = data.from_pretty;*/
-
             mortgageSumInput[0].value = data.from_pretty;
          }
       });
@@ -110,9 +107,6 @@ export class Calculator {
          step: 1,
          drag_interval: true,
          onChange: data => {
-            /*mortgageDecorator[0].dataset.decorator = `${declOfNum(data.from, ['день', 'дня', 'дней'])}`;
-            mortgageTermInput[0].value = data.from;*/
-
             this.$termInput.val(data.from);
             mortgageTermInput.text(data.from + ` ${declOfNum(data.from, ['день', 'дня', 'дней'])}`);
          }

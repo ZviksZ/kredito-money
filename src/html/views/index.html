@@ -1,7 +1,7 @@
 <% var data = { title: "Главная | Kredito 24" }; %> <%= _.template(require('./../includes/header.html').default)(data) %>
 
 <section class="section main-banner">
-    <div class="part">
+    <div class="part hide-mobile">
         <div class="left">
             <div class="bg" style="background-image: url(/img/main/banner.jpg)"></div>
             <div class="text">
@@ -17,33 +17,33 @@
     </div>
     <div class="part">
         <div class="right">
-            <div class="calculator" id="calculator" data-settings='{"default":{"price":10000,"term":29},"values":{"minPrice":2000,"maxPrice":15000,"minTerm":16,"maxTerm":30}}'>
+            <div class="calculator" data-settings='{"default":{"price":10000,"term":29},"values":{"minPrice":2000,"maxPrice":15000,"minTerm":16,"maxTerm":30}}' id="calculator">
                 <form action="" id="calculator-form">
-                    <h4 class="h4 text-align-center">Получите деньги за 15 минут</h4>
+                    <h4 class="h4 text-align-center margin-bottom">Получите деньги за 15 минут</h4>
 
                     <div class="calculator-item">
                         <div class="top">
                             <span class="text">Хочу взять</span>
                             <div class="input-wrap">
-                                <input type="text" id="calculator-input" class="input-money">
+                                <input class="input-money" id="calculator-input" type="text">
                                 <span>₽</span>
                             </div>
                         </div>
                         <div class="calculator-min">1 год</div>
                         <div class="calculator-max">30 лет</div>
-                        <input type="text" class="js-range-slider" name="mortgage_sum_range" value=""/>
+                        <input class="js-range-slider" name="mortgage_sum_range" type="text" value=""/>
                     </div>
                     <div class="calculator-item">
                         <div class="top">
                             <span class="text">На срок</span>
                             <span id="calculator-term">29 дней</span>
-                            <input type="text" id="calculator-term-input" hidden>
+                            <input hidden id="calculator-term-input" type="text">
                         </div>
                         <div class="calculator-min">1 год</div>
                         <div class="calculator-max">30 лет</div>
-                        <input type="text" class="js-range-slider" name="mortgage_term_range" value=""/>
+                        <input class="js-range-slider" name="mortgage_term_range" type="text" value=""/>
                     </div>
-                    <button type="submit" class="button">Получить деньги</button>
+                    <button class="button" type="submit">Получить деньги</button>
 
                     <div class="calculator-summary">
                         <div class="item">
@@ -68,6 +68,348 @@
 
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section main-loan">
+    <div class="container">
+        <h4 class="section-title h4 text-align-center">Получить займ ещё не было так просто!</h4>
+        <div class="main-loan__wrap">
+            <div class="left" style="background-image: url(/img/main/laptop.svg)"></div>
+            <div class="right">
+                <div class="item">
+                    <img src="/img/icons/step-1.svg" alt="">
+                    <span class="num">1</span>
+                    <span>Заполните заявку на заём</span>
+                </div>
+                <div class="item">
+                    <img src="/img/icons/step-2.svg" alt="">
+                    <span class="num">2</span>
+                    <span>Узнайте решение через несколько минут</span>
+                </div>
+                <div class="item">
+                    <img src="/img/icons/step-3.svg" alt="">
+                    <span class="num">3</span>
+                    <span>Получите деньги на банковскую карту</span>
+                </div>
+            </div>
+        </div>
+        <div class="text-align-center">
+            <a href="" class="button">Получить деньги</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="section main-reviews">
+    <div class="container">
+        <h4 class="section-title h4 text-align-center">Отзывы о нас</h4>
+
+        <div class="text-align-center">
+            <a href="" class="button small white">Показать все</a>
+        </div>
+
+    </div>
+</section>
+<section class="section section-bg main-contacts">
+    <div class="container">
+        <div class="main-contacts__wrap">
+            <div class="item">
+                <div class="top">
+                    <div class="socials">
+                        <a href="">
+                            <img src="/img/icons/vk.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="/img/icons/ok.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="/img/icons/facebook.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="text">
+                    Следите за нами
+                    в соцсетях
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <img src="/img/icons/questions.svg" alt="">
+                </div>
+                <div class="text">
+                    Посмотрите
+                    <a href="#">вопросы и ответы</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <img src="/img/icons/email-big.svg" alt="">
+                </div>
+                <div class="text">
+                    Напишите нам
+                    <a href="mailto:info@kredito24.ru">info@kredito24.ru</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <img src="/img/icons/call.svg" alt="">
+                </div>
+                <div class="text">
+                    Позвоните нам
+                    <a href="tel:74952259063">+7 495 225-90-63</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-contacts__info">
+            Служба поддержки работает с понедельника по пятницу с 9:00-21:00 по Московскому времени
+        </div>
+    </div>
+</section>
+
+<section class="section main-articles">
+    <div class="container">
+        <h4 class="section-title h4 text-align-center">Новые статьи в блоге</h4>
+        <div class="main-articles__wrap">
+            <div class="item">
+                <div class="img" style="background-image: url(/img/main/art1.jpg)"></div>
+                <div class="date">14.08.2020</div>
+                <h6 class="h6 text-align-center">ООО МФК Монедо: новый адрес и имя компании Кредитех Рус</h6>
+                <div class="text">
+                    Содержание: Ребренд холдинга и компании Офис Kredito24 Как добраться Наши контакты Ребренд холдинга и компании Вслед за ребрендом
+                </div>
+                <a href="" class="read-more">Читать дальше</a>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url(/img/main/art2.jpg)"></div>
+                <div class="date">14.08.2020</div>
+                <h6 class="h6 text-align-center">Как найти работу в ритейле и что это</h6>
+                <div class="text">
+                    В последнее время очень динамично развивается практика продажи товаро В последнее время очень динамично развивается практика продажи товароВ последнее время очень динамично развивается практика продажи товаров широкого потребления, бытовой
+                    техники, продуктов питания, строительных материалов и
+                </div>
+                <a href="" class="read-more">Читать дальше</a>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url(/img/main/art3.jpg)"></div>
+                <div class="date">14.08.2020</div>
+                <h6 class="h6 text-align-center">Обновление ставок на ваши инвестиции в Kredito24</h6>
+                <div class="text">
+                    Компания ООО МФК Монедо (ранее Кредитех Рус) предлагает инвесторам выгодные условия на вложение средств в наш бизнес.
+                </div>
+                <a href="" class="read-more">Читать дальше</a>
+            </div>
+        </div>
+        <div class="text-align-center">
+            <a href="" class="button small white">Больше статей из блога</a>
+        </div>
+    </div>
+</section>
+
+
+<section class="section section-bg main-info">
+    <div class="container">
+        <h4 class="section-title h4 text-align-center">Полезная информация</h4>
+        <div class="main-info__wrap">
+            <div class="item">
+                <div class="top">
+                    <span class="h6">Контактная информация</span>
+                    <img src="/img/icons/arrow-down.svg" alt="">
+                </div>
+                <div class="content">
+                    <p>
+                        Пишите: <a href="mailto:info@kredito24.ru">info@kredito24.ru</a> Звоните: +7 495 225-90-63 (пн-пт, 09:00 - 21:00 мск)
+                    </p>
+                    <p>
+                        ООО МФК «Монедо», 127473, г. Москва, ул. Краснопролетарская, д. 16, стр. 1, этаж 1, пом. X, комн. 13. Тел. <a href="tel:74952259063">+7 495 225-90-63</a>. Номер регистрации в Государственном реестре
+                        микрофинансовых организаций: 651303552003006
+                    </p>
+                    <p>
+                        В случае невозможности погашения займа в срок, установленный договором микрозайма, возможна пролонгация срока займа. Максимальный срок одной пролонгации не может превышать изначальный срок займа. Максимальное количество пролонгаций, согласно Базовому Стандарту, равно пяти на один заем.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <span class="h6">Пролонгация</span>
+                    <img src="/img/icons/arrow-down.svg" alt="">
+                </div>
+                <div class="content">
+                    <p>
+                        Пример расчета ставки за пролонгацию, для займа 30 дней
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Срок продления (пролонгации), дней</th>
+                                <th>Ставка, %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 (пятнадцать)</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>23 (двадцать три)</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>30 (тридцать)</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        Ставка за пролонгацию начисляется на непогашенную сумму основного долга по займу.
+                    </p>
+                    <p>
+                        Более подробную информацию можно найти, перейдя по ссылке <a href="/">Глава 7. Пролонгация срока займа</a>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <span class="h6">Просрочка</span>
+                    <img src="/img/icons/arrow-down.svg" alt="">
+                </div>
+                <div class="content">
+                    <p>
+                        В случае нарушения заемщиком сроков возврата займа, установленных Договором, заемщик обязуется уплатить штраф, размер которого определяется размером займа и количеством дней просрочки договора.
+                    </p>
+                    <p>
+                        Штраф начисляется ежедневно на не погашенную заемщиком часть суммы основного долга по Договору. Размер штрафа составляет 0,055% с учетом округления в день, но не более 20% годовых.
+                    </p>
+                    <p>
+                        Более подробную информацию можно найти, перейдя по ссылке <a href="/">Глава 8. Просрочка погашения займаа</a>
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="top">
+                    <span class="h6">Пример расчета процентной ставки</span>
+                    <img src="/img/icons/arrow-down.svg" alt="">
+                </div>
+                <div class="content">
+                    <p>
+                        Пример расчета процентной ставки займа размером 2000 руб. на срок 16 дней.
+                    </p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Наименование сбора</th>
+                            <th>Процентная ставка</th>
+                            <th>Сумма к оплате</th>
+                            <th>Годовая процентная ставка</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Процентная ставка за пользование займом на 16 дней (1% в день)</td>
+                                <td>16,00%</td>
+                                <td>2320 руб.</td>
+                                <td>365%</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <a href="#">Раскрытие информации ООО МФК “Монедо”</a>
+                    <p>
+                        Информация о лицах, оказывающих существенное (прямое или косвенное) влияние на решения, принимаемые органами управления микрофинансовой компании (МФК) ООО «Монедо»
+                    </p>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Селиванов Дмитрий Сергеевич</th>
+                            <th>Генеральный директор/единоличный исполнительный орган МФК</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Монедо Холдинг ГмбХ, регистрационный номер HRB122027, Гамбург</td>
+                            <td>Юридическое лицо, имеющее право распоряжаться более чем 20 процентами общего количества голосов, приходящихся на доли МФК</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section main-more-info">
+    <div class="container">
+        <h6 class="h6 margin-bottom-x2">Займы онлайн на карту</h6>
+        <p>В Kredito24 Вы можете получить до 15 000 тысяч рублей на срок до 30 дней под 1%. Наши преимущества:</p>
+        <ul>
+            <li>
+                Прозрачные <a href="#">условия получения займов</a> и отсутствие скрытых сборов
+            </li>
+            <li>
+                Удобный <a href="#">личный кабинет</a>
+            </li>
+            <li>
+                100% онлайн
+            </li>
+            <li>
+                Без залога, справок, поручителей и пакета документов
+            </li>
+            <li>
+                Мы не обзваниваем ваших родственников и коллег
+            </li>
+            <li>
+                Займ очень <a href="#">легко погасить</a>. Есть возможность частичного погашения и пролонгации (не более 5-ти)
+            </li>
+            <li>
+                Мы никогда не спрашиваем вас, на что вы хотите потратить ваши деньги
+            </li>
+        </ul>
+        <p>Мы знаем, что в жизни есть моменты, когда деньги нужны срочно. Наша цель – обеспечить вас необходимым в самый короткий срок.</p>
+        <h6 class="h6 margin-top-x2 margin-bottom-x2">Как получить займ</h6>
+        <p>Зайдите в ваш <a href="#">личный кабинет</a> или создайте учётную запись. Вам понадобится:</p>
+        <ul>
+            <li>
+                Компьютер или телефон с доступом в интернет
+            </li>
+            <li>
+                Телефон для получения смс-кода
+            </li>
+            <li>
+                Скан вашего паспорта РФ и номер СНИЛС
+            </li>
+            <li>
+                Ваша именная банковская карта Visa, MasterCard или Мир, действительная в течение следующих 3 месяцев.
+            </li>
+        </ul>
+        <p>Проверка документов не занимает много времени. После заполнения анкеты вам нужно подписать договор с помощью СМС- кода. Если все данные были заполнены корректно, деньги переводятся на счет клиента сразу. Внимание: банки иногда могут задерживать выплаты до 3-5 дней. После своевременного погашения первого займа лимит доступной суммы займа увеличивается.</p>
+        <h6 class="h6 margin-top-x2 margin-bottom-x2">Поможем исправить плохую кредитную историю</h6>
+        <p>
+            У вас есть возможность исправить плохую кредитную историю. Вы улучшите вашу кредитную историю, последовательно оформив и своевременно погасив несколько займов. Прочитайте наши статьи:
+            <a href="#"> Как узнать кредитную историю и зачем это нужно, Как найти кредитную историю, Какие факторы влияют на вашу кредитную историю: ЗА И ПРОТИВ</a>
+        </p>
+        <h6 class="h6 margin-top-x2 margin-bottom-x2">Как погасить займ?</h6>
+        <p>Подробнее о погашении займа в разделе <a href="#">“Как погасить займ”</a>. Сделать это можно любым удобным способом:</p>
+        <ul>
+            <li>
+                Через <a href="#">личный кабинет</a>, выбрав опцию “оплата”
+            </li>
+            <li>
+                Оплатить с помощью электронного кошелька
+            </li>
+            <li>
+                Оплатить с помощью терминалов Qiwi или Элекснет
+            </li>
+            <li>
+                Банковским переводом
+            </li>
+        </ul>
+        <p>Кроме того, доступно частичное погашение платежа. Подробнее: Правила предоставления микрозаймов и <a href="#">Общие условия оформления займа</a></p>
+        <h6 class="h6 margin-top-x2 margin-bottom-x2">Есть вопросы?</h6>
+        <p>Ознакомьтесь с <a href="#">“Часто задаваемыми вопросами”</a>. Не нашли ответ? Звоните +7 495 225-90-63 или пишите <a href="mailto:info@kredito24.ru">info@kredito24.ru</a>. По вопросам просроченной
+            задолженности обращайтесь по
+            номеру +7 495
+            967-33-80. Оставьте отзыв <a href="#">“Отзывы Kredito24”</a>.</p>
     </div>
 </section>
 

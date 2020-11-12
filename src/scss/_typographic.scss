@@ -8,7 +8,10 @@
     padding: 52px 0;
     overflow: hidden;
     @include mobile {
-        padding: 20px 0;
+        padding: 35px 0;
+    }
+    &.section-bg {
+        background: $colorGrayLight;
     }
 }
 
@@ -58,6 +61,28 @@ p {
     color: $colorText;
 }
 
+ul {
+    list-style: none;
+    li {
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+        color: $colorText;
+        padding-left: 27px;
+        margin: 10px 0;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 0;
+            display: block;
+            width: 7px;
+            height: 7px;
+            background: $colorText;
+            border-radius: 50%;
+        }
+    }
+}
 
 
 
@@ -66,7 +91,7 @@ a {
     align-items: center;
     font-size: 16px;
     line-height: 24px;
-    color: $colorBlueDark;
+    color: $colorBlue;
     outline: none;
     -webkit-user-select: none;
     -moz-user-select: none;
