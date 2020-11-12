@@ -1,5 +1,74 @@
 <% var data = { title: "Главная | Kredito 24" }; %> <%= _.template(require('./../includes/header.html').default)(data) %>
 
+<section class="section main-banner">
+    <div class="part">
+        <div class="left">
+            <div class="bg" style="background-image: url(/img/main/banner.jpg)"></div>
+            <div class="text">
+                <h1 class="h1">
+                    <span class="font-normal">Займы в</span> Kredito24
+                </h1>
+                <div class="subtitle">
+                    Заявка за 15 минут 🚀
+                </div>
+            </div>
+        </div>
 
+    </div>
+    <div class="part">
+        <div class="right">
+            <div class="calculator" id="calculator" data-settings='{"default":{"price":10000,"term":29},"values":{"minPrice":2000,"maxPrice":15000,"minTerm":16,"maxTerm":30}}'>
+                <form action="" id="calculator-form">
+                    <h4 class="h4 text-align-center">Получите деньги за 15 минут</h4>
+
+                    <div class="calculator-item">
+                        <div class="top">
+                            <span class="text">Хочу взять</span>
+                            <div class="input-wrap">
+                                <input type="text" id="calculator-input" class="input-money">
+                                <span>₽</span>
+                            </div>
+                        </div>
+                        <div class="calculator-min">1 год</div>
+                        <div class="calculator-max">30 лет</div>
+                        <input type="text" class="js-range-slider" name="mortgage_sum_range" value=""/>
+                    </div>
+                    <div class="calculator-item">
+                        <div class="top">
+                            <span class="text">На срок</span>
+                            <span id="calculator-term">29 дней</span>
+                            <input type="text" id="calculator-term-input" hidden>
+                        </div>
+                        <div class="calculator-min">1 год</div>
+                        <div class="calculator-max">30 лет</div>
+                        <input type="text" class="js-range-slider" name="mortgage_term_range" value=""/>
+                    </div>
+                    <button type="submit" class="button">Получить деньги</button>
+
+                    <div class="calculator-summary">
+                        <div class="item">
+                            <span>Сумма займа</span>
+                            <span id="calculator-sum-get">10 000 ₽</span>
+                        </div>
+                        <div class="item">
+                            <span>Срок</span>
+                            <span id="calculator-sum-term">29 дней</span>
+                        </div>
+                        <div class="item">
+                            <span>Сумма к погашению</span>
+                            <span id="calculator-sum-total">12 900 ₽</span>
+                        </div>
+                        <div class="item">
+                            <span>До</span>
+                            <span id="calculator-sum-date">25.11.2020</span>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>

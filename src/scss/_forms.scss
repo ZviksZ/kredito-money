@@ -352,10 +352,11 @@ input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }*/
 
-label {
+
+.input-wrap {
     position: relative;
 }
-label input {
+.input-wrap  input {
     width: 100%;
     height: 44px;
     background: #FFFFFF;
@@ -368,15 +369,15 @@ label input {
     transition: .1s ease;
 }
 @include desktop {
-    label input:hover {
+    .input-wrap  input:hover {
         border: 2px solid $colorBlue;
     }
 }
-label input:active,
-label input:focus {
+.input-wrap  input:active,
+.input-wrap  input:focus {
     border: 2px solid $colorBlue;
 }
-label span {
+.input-wrap  span {
     position: absolute;
     top: 5px;
     right: 10px;

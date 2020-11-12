@@ -1,4 +1,5 @@
 import * as $                                                from 'jquery';
+import { Calculator }                                        from './components/calculator';
 import { CustomSelect }                                      from './components/custom-select';
 import { CustomTabs }                                        from './components/custom-tabs';
 import { FeedForm }                                          from './components/feed-form';
@@ -22,6 +23,9 @@ $(function() {
    // форма подписки на рассылку новостей
    new FeedForm();
 
+   //Функционал калькулятора
+   new Calculator();
+
    // инициализация функционала модальных окон
    let modal = new ModalWindowFullScreen();
 
@@ -29,4 +33,8 @@ $(function() {
    initMaskedInput();
    initPlaceholders();
    initMoneyInput();
+
+   setTimeout(() => {
+      $('.preloader').addClass('preloader-hide');
+   }, 200);
 });

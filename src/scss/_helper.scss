@@ -207,7 +207,11 @@
 }
 
 .text-italic {
-    font-style: italic;
+    font-style: italic !important;
+}
+
+.font-normal {
+    font-weight: 400 !important;
 }
 
 
