@@ -1,3 +1,176 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    .header-top {
+        width: 100%;
+        height: 34px;
+        background: $colorGrayLight;
+        @include mobile {
+            display: none;
+        }
+        .header-top__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+    }
+    .header-bottom {
+        position: relative;
+        width: 100%;
+        height: 75px;
+        background: $colorWhite;
+        @include mobile {
+            height: 60px;
+            .container {
+                padding: 0 !important;
+            }
+        }
+        .header-bottom__wrap {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            @include mobile {
+                justify-content: center;
+            }
+            .logo {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            nav {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: 38px;
+                .item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: $colorBlueDark;
+                    img {
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        margin-left: 6px;
+                    }
+                }
+                .item + .item {
+                    margin-left: 38px;
+                }
+            }
+        }
+        .header__burger {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            span {
+                display: block;
+                position: absolute;
+                width: 27px;
+                height: 2px;
+                background-color: $colorText;
+                transition: .2s;
+                &::before,
+                &::after {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $colorText;
+                    transition: .2s;
+                }
+                &::before {
+                    content: '';
+                    transform: translateY(-5px);
+                }
+                &::after {
+                    content: '';
+                    transform: translateY(5px);
+                }
+            }
 
+        }
+    }
+}
+
+.header-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorWhite;
+    z-index: 998;
+    transform: translateY(-100%);
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    .item {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        line-height: 27px;
+        color: $colorBlueDark;
+        img {
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-left: 6px;
+        }
+    }
+    a + a {
+        margin-top: 17px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 17px 0;
+        a + a{
+            margin-top: 24px;
+        }
+    }
+}
+
+.header-margin {
+    width: 100%;
+    height: 109px;
+    @include mobile {
+        height: 60px;
+    }
+}
+
+.header-menu-open {
+    .header {
+        .header-bottom {
+            .header__burger {
+                span {
+                    transform: rotate(45deg);
+                    &::before {
+                        transform: translateY(0) rotate(0);
+                    }
+                    &::after {
+                        transform: translateY(0) rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+    .header-menu {
+        transform: translateY(0);
+    }
 }

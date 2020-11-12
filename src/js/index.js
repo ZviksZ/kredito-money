@@ -1,11 +1,11 @@
-import * as $ from 'jquery';
-import { CustomSelect } from './components/custom-select';
-import { CustomTabs } from './components/custom-tabs';
-import { FeedForm } from './components/feed-form';
-import { initMaskedInput, initPlaceholders } from './components/form';
-import { Header } from './components/header';
-import { HeaderMenu } from './components/header-menu';
-import { ModalWindowFullScreen } from './components/modal-window-fullscreen';
+import * as $                                                from 'jquery';
+import { CustomSelect }                                      from './components/custom-select';
+import { CustomTabs }                                        from './components/custom-tabs';
+import { FeedForm }                                          from './components/feed-form';
+import { initMaskedInput, initMoneyInput, initPlaceholders } from './components/form';
+import { Header }                                            from './components/header';
+import { HeaderMenu }                                        from './components/header-menu';
+import { ModalWindowFullScreen }                             from './components/modal-window-fullscreen';
 window.jQuery = require('jquery');
 
 $(function() {
@@ -28,4 +28,5 @@ $(function() {
    // Инициализация плейсхолдеров и масок
    initMaskedInput();
    initPlaceholders();
+   initMoneyInput();
 });

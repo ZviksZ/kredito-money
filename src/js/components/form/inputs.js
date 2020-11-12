@@ -81,8 +81,8 @@ function initMoneyInput() {
             groupSeparator: ' ',
             autoGroup: true,
             min: 0,
-            max: 999999999,
-            suffix: currency,
+            max: 999999999999,
+            /*suffix: currency,*/
             allowMinus: false,
             rightAlign: false,
             showMaskOnHover: false,

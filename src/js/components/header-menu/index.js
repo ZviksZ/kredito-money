@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 export class HeaderMenu {
    constructor() {
       this.$html = $('html');
-      this.$burgerBtn = $('#header__burger');
+      this.$burgerBtn = $('#header .header__burger');
 
       this.init();
    }
@@ -13,10 +13,10 @@ export class HeaderMenu {
    };
 
    toggleMenu = () => {
-      if (this.$html.hasClass('menu-open')) {
-         this.$html.removeClass('menu-open');
+      if (this.$html.hasClass('header-menu-open')) {
+         this.$html.removeClass('header-menu-open');
       } else {
-         this.$html.addClass('menu-open');
+         this.$html.addClass('header-menu-open');
       }
    };
 }
