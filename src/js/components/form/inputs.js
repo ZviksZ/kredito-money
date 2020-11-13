@@ -71,6 +71,8 @@ function initMoneyInput() {
         if ($field.hasClass('mask-ready')) return;
 
         const currency = $field.attr('data-currency') || ' ₽';
+        const min = $field.attr('data-input-min') || 0;
+        const max = $field.attr('data-input-max') || 999999999999;
 
         Inputmask({
             alias: 'numeric',
@@ -80,8 +82,8 @@ function initMoneyInput() {
             placeholder: '',
             groupSeparator: ' ',
             autoGroup: true,
-            min: 0,
-            max: 999999999999,
+            min: min,
+            max: max,
             /*suffix: currency,*/
             allowMinus: false,
             rightAlign: false,

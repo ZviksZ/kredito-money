@@ -5,6 +5,7 @@
     max-width: 534px;
     width: 100%;
     height: auto;
+    box-shadow: 0px 5px 10px rgba(29, 43, 63, 0.1);
     @include mobile {
         padding: 27px 21px 32px;
     }

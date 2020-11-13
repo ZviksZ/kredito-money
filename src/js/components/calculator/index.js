@@ -13,6 +13,7 @@ export class Calculator {
       this.$sumInput = $('#calculator-input');
       this.$termText = $('#calculator-term');
       this.$termInput = $('#calculator-term-input');
+      this.$sumRangeInput = $('#calculator-range-value');
 
       this.sumSlider = this.initSumRangeSlider();
       this.termRangeSlider = this.initTermRangeSlider();
@@ -33,17 +34,41 @@ export class Calculator {
             this.getCalculatorSummary();
          }, 10);
       });
+
+      this.$sumInput.on('input', this.inputChange)
    };
 
+   inputChange = (e) => {
+      let value = +e.target.value
+
+      const initialFeeSlider = $('[name="mortgage_sum_range"]').data('ionRangeSlider');
+
+      let newVal = value
+
+      if (value > this.JSON.values.maxPrice) {
+         newVal = this.JSON.values.maxPrice
+      } else if (value < this.JSON.values.minPrice) {
+         newVal = this.JSON.values.minPrice
+      }
+
+      initialFeeSlider.update({
+         from: newVal
+      });
+   }
+
    getCalculatorSummary = () => {
-      let sumVal = this.$sumInput.val();
+      let sumVal = this.$sumRangeInput.val();
       let termVal = this.$termInput.val();
       let dateString = this.getDateString(termVal);
 
       $('#calculator-sum-get').text(numberFormat(sumVal, 0, '', ' ') + ' ₽');
+      $('#calculator-sum-get__input').val(sumVal);
       $('#calculator-sum-term').text(termVal + ` ${declOfNum(termVal, ['день', 'дня', 'дней'])}`);
+      $('#calculator-sum-term__input').val(termVal);
       $('#calculator-sum-date').text(dateString);
+      $('#calculator-sum-date__input').val(dateString);
       $('#calculator-sum-total').text();
+      $('#calculator-sum-total__input').text();
    };
 
    getDateString = (term) => {
@@ -59,6 +84,7 @@ export class Calculator {
       const mortgageSumInput = this.$sumInput;
 
       mortgageSumInput[0].value = numberFormat(this.JSON.default.price, 0, ' ');
+      this.$sumRangeInput[0].value = this.JSON.default.price;
 
       mortgageSumInput
          .closest('.calculator-item')
@@ -80,7 +106,15 @@ export class Calculator {
          prettify_separator: ' ',
          onChange: data => {
             mortgageSumInput[0].value = data.from_pretty;
-         }
+            this.$sumRangeInput[0].value = data.from_pretty;
+
+         },
+         onUpdate: (data) => {
+            this.$sumRangeInput[0].value = data.from_pretty;
+            setTimeout(() => {
+               this.getCalculatorSummary();
+            }, 10);
+         },
       });
    };
 

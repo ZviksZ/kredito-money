@@ -165,10 +165,7 @@
             flex-direction: column;
             .item {
                 width: 100%;
-                flex-direction: row;
-            }
-            .item + .item {
-                margin-top: 18px;
+                margin: 18px 0;
             }
         }
 
@@ -250,6 +247,7 @@
             background: $colorWhite;
             padding: 14px 34px;
             border-radius: 8px;
+
             .top {
                 display: flex;
                 align-items: center;
@@ -277,6 +275,19 @@
                 }
                 .content {
                     display: block;
+                }
+            }
+            @include mobile {
+                padding: 14px;
+                .top {
+                    .h6 {
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
+                    img {
+                        display: block;
+                        max-width: 14px;
+                    }
                 }
             }
         }
