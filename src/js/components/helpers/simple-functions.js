@@ -1,4 +1,5 @@
-import * as $ from 'jquery';
+import * as $                                 from 'jquery';
+import { initFormWithValidate, validateForm } from '../form';
 
 export function initInfoTabs() {
    $('.info__wrap .item .top').on('click', function() {
@@ -20,6 +21,27 @@ export function initInteriorMobileBtn() {
             .text('Скрыть')
             .closest('.interior-page__wrap')
             .addClass('show-content');
+      }
+   });
+}
+
+export function initMonedoHeader() {
+   $('.monedo-header .burger').on('click', function() {
+      $('html').toggleClass('show-menu');
+   });
+}
+export function initMonedoMenu() {
+   $('.monedo-menu nav a').on('click', function() {
+      $('html').removeClass('show-menu');
+   });
+}
+export function initMonedoForm() {
+   $('#monedo-form button[type="submit"]').on('click', function(e) {
+      let $form = $('#monedo-form')
+      validateForm($form, false)
+
+      if ($form.find('.error').length === 0) {
+         $form.submit();
       }
    });
 }

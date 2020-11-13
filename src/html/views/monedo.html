@@ -1,0 +1,231 @@
+<% var data = { title: "Как это работает | Kredito 24", isMonedo: "true"}; %> <%= _.template(require('./../includes/header.html').default)(data) %>
+
+
+<div class="monedo-page">
+    <div class="monedo-header">
+        <div class="container">
+            <div class="monedo-header__wrap">
+                <a class="logo" href="/">
+                    <img alt="" src="/img/monedo/logo.svg">
+                </a>
+                <a class="logo-color" href="/">
+                    <img alt="" src="/img/monedo/logo-color.svg">
+                </a>
+                <a class="phone" href="tel:74993993245">
+                    +7 (499) 399 32 45 <span>(Пн-Пт 11:00 - 19:00 Мск)</span>
+                </a>
+                <a class="btn" href="#">
+                    Свяжитесь со мной
+                </a>
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="monedo-menu">
+        <div class="container">
+            <div class="monedo-header__margin"></div>
+            <nav>
+                <a href="#">Обратная связь</a>
+                <a href="#">FAQ</a>
+                <a href="#">О компании</a>
+                <a href="#">СМИ о нас</a>
+                <a href="#">Сайт Kredito24</a>
+            </nav>
+            <div class="monedo-footer monedo-footer__black">
+                <div class="top">
+                    <div class="left">
+                        <span>По вопросам инвестирования обращайтесь:</span>
+                        <a href="mailto:investors@kredito24.ru">
+                            <img class="img-white" alt="" src="/img/monedo/email-white.svg">
+                            <img class="img-black" alt="" src="/img/monedo/email-black.svg">
+                            <span>investors@kredito24.ru</span>
+                        </a>
+                    </div>
+                    <div class="right">
+                        <span>Социальные сети:</span>
+                        <a href="/">
+                            <img class="img-white" alt="" src="/img/monedo/twitter-white.svg">
+                            <img class="img-black" alt="" src="/img/monedo/twitter-blue.svg">
+                        </a>
+                        <a href="/">
+                            <img class="img-white" alt="" src="/img/monedo/fb-white.svg">
+                            <img class="img-black" alt="" src="/img/monedo/fb-blue.svg">
+                        </a>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="margin-bottom-x2">
+                            ООО МФК «Монедо», Россия, 127473, г. Москва, ул. Краснопролетарская, д. 16, стр. 1, этаж 1, пом. X, комн. 13
+                        </div>
+                        <div>
+                            © 2020 Монедо ® | <a href="#">Политика конфиденциальности</a>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <a class="btn" href="#">Подробнее о Kredito24</a>
+                        <a class="logo" href="/">
+                            <img alt="" src="/img/monedo/logo.svg">
+                        </a>
+                        <a class="logo logo-color" href="/">
+                            <img alt="" src="/img/monedo/logo-color.svg">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="monedo-main" style="background-image: url(/img/monedo/bg.jpg)">
+        <div class="content">
+            <h1 class="section-title">Инвестиции в Монедо</h1>
+            <p class="subtitle">Высокая процентная ставка и гарантированный доход</p>
+            <div class="calculator calculator-monedo" data-settings='{"default":{"price":1500000},"values":{"minPrice":1500000,"maxPrice":10000000}}' id="calculator-monedo">
+
+                    <h4 class="h4 text-align-center margin-bottom">ИНВЕСТИРОВАТЬ</h4>
+
+                    <div class="calculator-item">
+                        <div class="top">
+                            <span class="text">Инвестировать</span>
+                            <div class="input-wrap">
+                                <input class="input-money" id="calculator-input" type="text">
+                                <input class="input-money" id="calculator-range-value" hidden type="text">
+                                <span>₽</span>
+                            </div>
+                        </div>
+                        <div class="calculator-min">1 год</div>
+                        <div class="calculator-max">30 лет</div>
+                        <input class="js-range-slider" name="mortgage_sum_range" type="text" value=""/>
+                    </div>
+
+                    <div class="calculator-monedo__term">
+                        <span>на</span>
+                        <div class="item active" data-term="9" data-percent="15">
+                            <span>9</span>
+                        </div>
+                        <div class="item" data-term="12" data-percent="16">
+                            <span>12</span>
+                        </div>
+                        <div class="item" data-term="18" data-percent="14">
+                            <span>18</span>
+                        </div>
+                        <div class="item" data-term="24" data-percent="14">
+                            <span>24</span>
+                        </div>
+                        <span>месяцев</span>
+
+
+                    </div>
+                    <div class="calculator-monedo__summary">
+                        <div class="item">
+                            <span>Процентная ставка:</span>
+                            <span class="num" id="calculator-monedo-percent__text">15% *</span>
+
+                        </div>
+                        <div class="item">
+                            <span>Ваш доход:</span>
+                            <span class="num" id="calculator-monedo-income__text">168 750 ₽</span>
+
+                        </div>
+                        <div class="info">
+                            * - % до уплаты НДФЛ
+                        </div>
+                    </div>
+
+                    <a href="#monedo-form-block" class="btn btn-white" type="submit">Свяжитесь со мной</a>
+
+
+            </div>
+            <div class="certificate">
+                <a href="/">Свидетельство ЦБ РФ</a>
+            </div>
+        </div>
+    </div>
+    <div class="monedo-form" id="monedo-form-block">
+        <div class="container">
+            <div class="content">
+                <h1 class="section-title black-title text-align-center">Связаться</h1>
+                <form action="" class="form" id="monedo-form">
+                    <label class="field field-input">
+                        <input class="input-text placeholder validate" placeholder="Ваше имя" data-placeholder="Ваше имя" data-validate="required" id="call-feedback_name"
+                               name="f_name" type="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input ">
+                        <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-placeholder="Номер телефона" data-validate="number_phone-required" id="call-feedback_phone"
+                               name="f_phone" type="text" value="" inputmode="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <label class="field field-input ">
+                        <input class="input-text placeholder validate input-mask" data-placeholder="Ваш email" placeholder="mail@example.ru" data-validate="email"
+                               name="f_email" type="text" value="" inputmode="text">
+                        <p class="error-message"></p>
+                    </label>
+                    <div class="policy">
+                        <input type="checkbox" name="f_policy" id="monedo-form_policy">
+                        <label for="monedo-form_policy">
+                            Я прочитал и принимаю <a href="#">политику
+                            конфиденциальности</a>
+                        </label>
+                    </div>
+
+                    <input type="text" value="9" name="f_term" hidden id="calculator-monedo-term">
+                    <input type="text" hidden name="f_percent" id="calculator-monedo-percent">
+                    <input type="text" hidden name="f_income" id="calculator-monedo-income">
+                    <input type="text" hidden name="cc" value="78">
+
+                    <button type="submit" class="btn btn-blue btn-width">Свяжитесь со мной</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="monedo-footer">
+        <div class="container">
+            <div class="top">
+                <div class="left">
+                    <span>По вопросам инвестирования обращайтесь:</span>
+                    <a href="mailto:investors@kredito24.ru">
+                        <img alt="" src="/img/monedo/email-white.svg">
+                        <span>investors@kredito24.ru</span>
+                    </a>
+                </div>
+                <div class="right">
+                    <span>Социальные сети:</span>
+                    <a href="/">
+                        <img alt="" src="/img/monedo/twitter-white.svg">
+                    </a>
+                    <a href="/">
+                        <img alt="" src="/img/monedo/fb-white.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="left">
+                    <div class="margin-bottom-x2">
+                        ООО МФК «Монедо», Россия, 127473, г. Москва, ул. Краснопролетарская, д. 16, стр. 1, этаж 1, пом. X, комн. 13
+                    </div>
+                    <div>
+                        © 2020 Монедо ® | <a href="#">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <a class="btn" href="#">Подробнее о Kredito24</a>
+                    <a class="logo" href="/">
+                        <img alt="" src="/img/monedo/logo.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+

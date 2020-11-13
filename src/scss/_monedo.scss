@@ -1,0 +1,514 @@
+.monedo-page {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .section-title {
+        font-size: 50px;
+        line-height: 60px;
+        color: $colorWhite;
+        &.black-title {
+            color: #2D2D2D;
+        }
+    }
+    .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 28px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 2px solid $colorWhite;
+        border-radius: 22px;
+        font-size: 16px;
+        line-height: 19px;
+        color: $colorWhite;
+        transition: 0.1s ease;
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        @include desktop {
+            &:hover {
+                background: $colorWhite;
+                color: $colorBlueDarken;
+                opacity: 1;
+            }
+        }
+        &.btn-blue {
+            background: $colorBlueDarken;
+            color: $colorWhite;
+            @include desktop {
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+        &.btn-white {
+            background: $colorWhite;
+            color: $colorBlueDarken;
+            &:hover {
+                background: $colorBlueDarken;
+                color: $colorWhite;
+                opacity: 1;
+            }
+        }
+        &.btn-width {
+            width: 100%;
+        }
+    }
+    .monedo-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 129px;
+        background: transparent;
+        z-index: 99;
+        transition: 0.3s ease;
+        .monedo-header__wrap {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            .logo-color {
+                display: none;
+            }
+            .logo, .logo-color {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .phone {
+                margin-left: auto;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                color: $colorWhite;
+                margin-right: 60px;
+                span {
+                    font-weight: 400;
+                }
+            }
+            .burger {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                width: 35px;
+                height: 100%;
+                margin-left: 60px;
+                cursor: pointer;
+                overflow: hidden;
+                @include desktop {
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                span {
+                    position: relative;
+                    display: block;
+                    width: 30px;
+                    height: 0;
+                    background-color: $colorWhite;
+                    transition: .2s;
+                    &::before,
+                    &::after {
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        background-color: $colorWhite;
+                        transition: .2s;
+                    }
+                    &::before {
+                        content: '';
+                        transform: translateY(-4px);
+                    }
+                    &::after {
+                        right: 0;
+                        width: 50%;
+                        content: '';
+                        transform: translateY(4px);
+                    }
+                }
+            }
+        }
+    }
+    .monedo-header__margin {
+        width: 100%;
+        height: 129px;
+    }
+    .monedo-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 98;
+        background: $colorWhite;
+        transition: 0.3s ease;
+        transform: translateY(100%);
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            a {
+                font-weight: 600;
+                font-size: 50px;
+                line-height: 62px;
+                color: $colorBlueDarken;
+            }
+        }
+        .monedo-footer {
+            margin-top: auto;
+        }
+    }
+    .monedo-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1000px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        text-align: center;
+        .content {
+            width: 100%;
+            max-width: 710px;
+        }
+        .subtitle {
+            font-size: 22px;
+            line-height: 26px;
+            color: $colorWhite;
+        }
+        .calculator-monedo {
+            background: rgba(9, 5, 217, 0.8);
+            border-radius: 8px;
+            margin-top: 65px;
+            max-width: 710px;
+            .h4 {
+                font-size: 24px;
+                line-height: 29px;
+                color: $colorWhite;
+            }
+            .irs-handle {
+                background-color: $colorWhite;
+                border: 2px solid $colorWhite;
+                &:before, &:after {
+                    background: url(../img/monedo/arrow-blue.svg);
+                }
+            }
+            .irs-line {
+                background: #0C075C;
+            }
+            .irs-bar {
+                background-color: $colorWhite;
+            }
+            .calculator-monedo__term {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 17px;
+                span {
+                    color: $colorWhite;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+                .item {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    border: 2px solid $colorWhite;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: $colorWhite;
+                    transition: 0.1s ease;
+                    cursor: pointer;
+                    margin-left: 13px;
+                    &:last-of-type {
+                        margin-right: 13px;
+                    }
+                    span {
+                        font-size: 20px;
+                        line-height: 24px;
+                        pointer-events: none;
+                    }
+                    &.active {
+                        background: $colorWhite;
+                        span {
+                            color: $colorBlueDarken !important;
+                        }
+                    }
+                    @include desktop {
+                        &:hover {
+                            background: $colorWhite;
+                            span {
+                                color: $colorBlueDarken !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .calculator-item {
+                .top {
+                    .text {
+                        color: $colorWhite;
+                    }
+                    .input-wrap {
+                        span {
+                            color: $colorWhite;
+                        }
+                    }
+                    input {
+                        border: 2px solid #FFFFFF;
+                        box-sizing: border-box;
+                        border-radius: 6px;
+                        background: transparent;
+                        color: $colorWhite;
+                        max-width: 155px;
+                    }
+                }
+                .calculator-min,
+                .calculator-max {
+                    color: $colorWhite;
+                }
+            }
+            .calculator-monedo__summary {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 27px;
+                margin-bottom: 26px;
+                .item {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: $colorWhite;
+                        &.num {
+                            display: inline-block;
+                            font-size: 20px;
+                            line-height: 24px;
+                            font-weight: 600;
+                            margin-left: 8px;
+                        }
+                    }
+                }
+                .item + .item {
+                    margin-left: 30px;
+                }
+                .info {
+                    width: 100%;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: $colorWhite;
+                    margin-top: 9px;
+                }
+            }
+        }
+
+        .certificate {
+            margin-top: 27px;
+            width: 100%;
+            text-align: center;
+            a {
+                font-size: 16px;
+                line-height: 19px;
+                text-decoration-line: underline;
+                color: $colorWhite;
+            }
+        }
+    }
+    .monedo-footer {
+        background: #09118B;
+        padding: 45px 0 35px;
+        .img-black {
+            display: none;
+        }
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 18px;
+            line-height: 22px;
+            padding-bottom: 99px;
+            color: $colorWhite;
+            a {
+                font-size: 18px;
+                line-height: 22px;
+                color: $colorWhite;
+            }
+            .left {
+                display: flex;
+                align-items: center;
+                a {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 43px;
+                    img {
+                        display: block;
+                        margin-right: 17px;
+                    }
+                }
+            }
+            .right {
+                display: flex;
+                align-items: center;
+                a {
+                    margin-left: 20px;
+                }
+            }
+        }
+        .bottom {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            .left {
+                display: flex;
+                flex-direction: column;
+                color: $colorWhite;
+                font-size: 16px;
+                line-height: 19px;
+                width: 50%;
+                .top {
+                    margin-bottom: 15px;
+                }
+                a {
+                    color: $colorWhite;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+            .right {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                .logo {
+                    margin-left: 55px;
+                    @include desktop {
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                    &.logo-color {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.monedo-footer__black {
+            background: $colorWhite;
+            .img-white {
+                display: none;
+            }
+            .img-black {
+                display: flex;
+            }
+            .top {
+                padding-bottom: 80px;
+                color: $colorBlack;
+                a {
+                    color: $colorBlueDarken;
+                }
+            }
+            .bottom {
+                .left {
+                    color: $colorBlack;
+                    a {
+                        color: $colorBlueDarken;
+                    }
+                }
+                .right {
+                    .logo:not(.logo-color) {
+                        display: none;
+                    }
+                    .logo-color {
+                        display: inline-flex;
+                    }
+                }
+                .btn {
+                    border-color: $colorBlueDarken;
+                    color: $colorBlack;
+                    @include desktop {
+                        &:hover {
+                            background: $colorBlueDarken;
+                            color: $colorWhite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .monedo-form {
+        padding: 66px 0 86px;
+        .content {
+            max-width: 344px;
+            margin: 0 auto;
+        }
+        .field {
+            margin-bottom: 24px;
+        }
+        .policy {
+            margin-bottom: 24px;
+        }
+    }
+
+}
+.show-menu {
+    body {
+        overflow: hidden;
+    }
+    .monedo-page {
+        .monedo-menu {
+            transform: translateY(0);
+        }
+        .monedo-header {
+            background: $colorWhite;
+            .logo {
+                display: none;
+            }
+            .logo-color {
+                display: inline-block;
+            }
+            .btn {
+                border-color: $colorBlack;
+                color: $colorBlack;
+                @include desktop {
+                    &:hover {
+                        background: $colorBlack;
+                        color: $colorWhite;
+                    }
+                }
+            }
+            .phone {
+                color: $colorBlack;
+            }
+            .burger {
+                span {
+                    background-color: $colorBlack;
+                    &::before,
+                    &::after {
+                        background-color: $colorBlack;
+                    }
+                    &::before {
+                        transform: translateY(0) rotate(-45deg);
+                    }
+                    &::after {
+                        width: 100%;
+                        transform: translateY(0) rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+
+}

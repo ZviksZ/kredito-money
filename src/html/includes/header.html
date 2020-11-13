@@ -18,6 +18,9 @@
     <title><%=title%></title>
 </head>
 <body>
+
+<% if (isMonedo !== 'true') { %>
+
 <div class="preloader"></div>
 <div id="header" class="header">
     <div class="header-top">
@@ -99,3 +102,4 @@
 
 <div class="body">
     <div class="header-margin"></div>
+<% } %>

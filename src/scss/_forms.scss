@@ -31,7 +31,7 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
 
 
 
-/*.form {
+.form {
     position: relative;
     background: #ffffff;
     overflow: hidden;
@@ -146,15 +146,9 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
     .label {
         display: inline-block;
         width: 100%;
-        position: absolute;
         z-index: 20;
         margin-top: 0;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: $colorGray;
-        left: 17px;
-        top: 13px;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -163,40 +157,36 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
         -o-transition: all 0.2s ease;
         transition: all 0.2s ease;
         font-family: $fontBase !important;
+        font-size: 16px;
+        line-height: 19px;
+        color: #6C6B76;
+        margin-bottom: 6px;
     }
     .input-text, .input-fill-control {
         display: flex;
         width: 100%;
-        height: 72px;
+        height: 48px;
         font-weight: bold;
         font-size: 19px;
         line-height: 32px;
         color: $colorText;
-        padding: 30px 17px 10px;
-        border: 1px solid $colorGrayMiddle;
+        padding: 14px 19px;
         box-sizing: border-box;
-        border-radius: 5px;
         font-family: $fontBase !important;
+        border: 2px solid #DDDDDD;
+        border-radius: 6px;
         &:-webkit-autofill {
             -webkit-animation-name: autofill;
             -webkit-animation-fill-mode: both;
         }
         &:focus {
-            border: 1px solid $colorBlue;
+            border: 2px solid $colorBlueDarken;
         }
 
     }
     &.empty {
-        .label {
-            top: 24px;
-            left: 17px;
-            font-size: 20px;
-            line-height: 24px;
-            color: $colorText;
-        }
         .input-text {
-            background: $colorGray;
-            border: 1px solid $colorGray;
+            border: 2px solid #DDDDDD;
             &::-webkit-input-placeholder {
                 opacity: 0;
             }
@@ -211,44 +201,11 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
             }
         }
     }
-    &.with-search-icon {
-        .label {
-            left: 17px;
-        }
-        &:before {
-            display: none;
-        }
-        .input-text {
-            padding-left: 17px;
-        }
-    }
-    &.with-search-icon.empty {
-        .label {
-            left: 54px;
-        }
-        &:before {
-            position: absolute;
-            top: 26px;
-            left: 17px;
-            font-size: 20px;
-            display: block;
-            content: "\6d";
-            font-family: "pentcroft" !important;
-            font-style: normal !important;
-            font-weight: normal !important;
-            font-variant: normal !important;
-            text-transform: none !important;
-            speak: none;
-            line-height: 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    }
 
     @include desktop {
         &:hover {
             .input-text, .input-fill-control {
-                border: 1px solid $colorGrayMiddle;
+                border: 2px solid $colorBlueDarken;
             }
 
         }
@@ -265,7 +222,7 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
         font-weight: 400;
         color: red;
         position: absolute;
-        top: 52px;
+        top: 66px;
         left: 0;
     }
     &.error {
@@ -275,6 +232,11 @@ input, textarea, select { font-family:'Source Sans Pro' !important; }
         }
         .error-message {
             display: block;
+        }
+        @include desktop {
+            .input-text:hover, .input-fill-control:hover {
+                border: 2px solid red;
+            }
         }
     }
 }
@@ -293,6 +255,14 @@ input[type="checkbox"]:not(:checked) + label{
     padding-left: 40px;
     line-height: 20px;
     cursor: pointer;
+    font-size: 14px;
+    color: #2C3341;
+    a {
+        color: $colorBlueDarken;
+        text-decoration: underline;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 input[type="checkbox"]:checked + label:before,
@@ -301,20 +271,20 @@ input[type="checkbox"]:not(:checked) + label:before{
     position: absolute;
     left: 0;
     top: 1px;
-    width: 18px;
-    height: 18px;
-    border: 1px solid $colorGrayLight;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #DDDDDD;
     background-color: #ffffff;
 }
 
 input[type="checkbox"]:checked + label:before,
 input[type="checkbox"]:not(:checked) + label:before {
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 input[type="checkbox"]:checked + label:before {
-    background: $colorBlue;
-    border: 1px solid $colorBlue;
+    background: $colorBlueDarken;
+    border: 1px solid $colorBlueDarken;
 }
 
 
@@ -330,8 +300,8 @@ input[type="checkbox"]:not(:checked) + label:after{
 
 input[type="checkbox"]:checked + label:after,
 input[type="checkbox"]:not(:checked) + label:after {
-    left: 4px;
-    top: 5px;
+    left: 5px;
+    top: 6px;
     width: 10px;
     height: 5px;
     border-radius: 1px;
@@ -350,7 +320,7 @@ input[type="checkbox"]:not(:checked) + label:after {
 
 input[type="checkbox"]:checked + label:after {
     opacity: 1;
-}*/
+}
 
 
 .input-wrap {
