@@ -1,0 +1,224 @@
+.page-header {
+    padding: 15px 0 20px;
+    background-color: $colorWhite;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    &__breadcrumbs {
+        display: flex;
+        align-items: center;
+        .item {
+            position: relative;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 21px;
+            color: $colorGrayMiddle;
+            text-decoration: none;
+        }
+        .item + .item {
+            margin-left: 21px;
+            &:before {
+                display: block;
+                content: '/';
+                position: absolute;
+                left: -14px;
+                top: 0;
+            }
+        }
+    }
+    &__title {
+        margin-top: 17px;
+        display: flex;
+        align-items: center;
+        &-back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            min-width: 46px;
+            height: 46px;
+            border: 2px solid $colorText;
+            box-sizing: border-box;
+            border-radius: 50%;
+            margin-right: 30px;
+            padding-left: 5px;
+            &:before {
+                content: '';
+                border: solid $colorText;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 7px;
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+            }
+            @include mobile {
+                width: 32px;
+                min-width: 32px;
+                height: 32px;
+                padding-left: 4px;
+                margin-right: 15px;
+                &:before {
+                    padding: 4px;
+                }
+            }
+        }
+        &-text {
+            font-weight: 300;
+            font-size: 44px;
+            line-height: 55px;
+            color: $colorText;
+            @include mobile {
+                font-size: 32px;
+                line-height: 42px;
+            }
+        }
+    }
+
+    &.page-header__with-bg {
+        .page-header__breadcrumbs {
+            .item {
+                color: $colorWhite;
+            }
+        }
+        .page-header__title {
+            &-back {
+                border: 2px solid $colorWhite;
+                &:before {
+                    border: solid $colorWhite;
+                    border-width: 0 2px 2px 0;
+                }
+            }
+            &-text {
+                color: $colorWhite;
+            }
+        }
+    }
+}
+
+.interior-page {
+    .interior-page__wrap {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 -12px;
+        .interior-main {
+            position: relative;
+            width: 100%;
+            margin: 0 12px;
+
+        }
+        .interior-calc {
+            margin: 0 12px;
+            width: 392px;
+            min-width: 392px;
+        }
+        @include mobile {
+            flex-wrap: wrap;
+            margin: 0 -17px;
+            .interior-main {
+                width: 100%;
+                margin: 0;
+                height: 60vh;
+                overflow: hidden;
+                .content {
+                    padding: 0 17px;
+                }
+            }
+            .interior-calc {
+                margin: 50px 0 0;
+                padding: 0 17px;
+                width: 100%;
+                min-width: auto;
+                display: flex;
+                justify-content: center;
+            }
+            &.show-content {
+                .interior-main {
+                    height: auto;
+                    padding-bottom: 100px;
+                }
+                .interior-mobile {
+                    .see-more {
+                        padding-top: 20px;
+                        &:before {
+                            transform: translateX(4px) rotate(-45deg);
+                        }
+                        &:after {
+                            margin-right: 5px;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .interior-image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 28px 0;
+    }
+    .interior-list {
+        padding-left: 15px;
+        margin: 28px 0;
+        li {
+            color: $colorBlue;
+            font-size: 16px;
+            line-height: 24px;
+            span {
+                color: $colorText;
+            }
+        }
+        li + li {
+            margin-top: 5px;
+        }
+    }
+    .interior-mobile {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: none;
+        @include mobile {
+            display: block;
+        }
+        .see-more {
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            width: 100%;
+            height: 100px;
+            padding: 50px 0px 0px;
+            background: linear-gradient(#fff0, #fff 55%), linear-gradient(#fff0, #fff 70%);
+            border: none;
+            outline: none;
+            color: $colorBlue;
+            font-size: 16px;
+            letter-spacing: -0.33px;
+            line-height: 24px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 1;
+            &:before,
+            &:after {
+                order: -1;
+                content: "";
+                display: block;
+                width: 10px;
+                height: 2px;
+                background: $colorBlue;
+                border-radius: 4px;
+            }
+            &:before {
+                transform: translateX(4px) rotate(45deg);
+            }
+            &:after {
+                margin-right: 5px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

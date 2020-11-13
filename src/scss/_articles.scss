@@ -1,0 +1,105 @@
+.articles-block {
+    .item {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+
+        .img {
+            display: flex;
+            width: 288px;
+            min-width: 288px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-background-size: cover;
+            background-size: cover;
+            margin-right: 24px;
+            border-radius: 3px;
+            &:before {
+                display: block;
+                content: '';
+                float: left;
+                padding-top: 65%;
+            }
+            @include desktop-smaller {
+                width: 230px;
+                min-width: 230px;
+            }
+        }
+        .info {
+            .category {
+                font-size: 14px;
+                line-height: 21px;
+                color: $colorText;
+                margin-bottom: 2px;
+            }
+            .title {
+                font-size: 22px;
+                line-height: 33px;
+                color: $colorText;
+            }
+            .text {
+                font-size: 14px;
+                line-height: 21px;
+                color: $colorGrayMiddle;
+                max-height: 105px;
+                overflow: hidden;
+                margin-bottom: 6px;
+            }
+            .read-more {
+                font-size: 14px;
+                line-height: 21px;
+                color: $colorBlue;
+            }
+        }
+
+        @include only-mobile {
+            flex-direction: column;
+            .img {
+                width: 100%;
+                min-width: 100%;
+                margin-bottom: 22px;
+                margin-right: 0;
+            }
+        }
+    }
+    .item + .item {
+        margin-top: 28px;
+    }
+}
+
+.articles-nav {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    a {
+        color: $colorText;
+        @include desktop {
+            &:hover {
+                color: $colorBlue;
+                opacity: 1;
+            }
+        }
+    }
+    a + a {
+        margin-left: 18px;
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: $colorText;
+        &.active {
+            background: $colorBlue;
+            color: $colorWhite;
+        }
+        &.item-divider {
+            pointer-events: none;
+        }
+    }
+}

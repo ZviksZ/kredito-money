@@ -6,7 +6,7 @@ import { FeedForm }                                          from './components/
 import { initMaskedInput, initMoneyInput, initPlaceholders } from './components/form';
 import { Header }                                            from './components/header';
 import { HeaderMenu }                                        from './components/header-menu';
-import { initInfoTabs }                                      from './components/helpers/simple-functions.js';
+import { initInfoTabs, initInteriorMobileBtn }               from './components/helpers/simple-functions.js';
 import { ModalWindowFullScreen }                             from './components/modal-window-fullscreen';
 window.jQuery = require('jquery');
 
@@ -36,6 +36,7 @@ $(function() {
    initMoneyInput();
 
    initInfoTabs();
+   initInteriorMobileBtn();
 
    setTimeout(() => {
       $('.preloader').addClass('preloader-hide');
