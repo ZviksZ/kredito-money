@@ -1,4 +1,4 @@
-<% var data = { title: "Как это работает | Kredito 24", isMonedo: "true"}; %> <%= _.template(require('./../includes/header.html').default)(data) %>
+<% var data = { title: "Monedo | Kredito 24", isMonedo: "true"}; %> <%= _.template(require('./../includes/header.html').default)(data) %>
 
 
 <div class="monedo-page">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="monedo-main" style="background-image: url(/img/monedo/bg.jpg)">
+    <section class="monedo-main" style="background-image: url(/img/monedo/bg.jpg)">
         <div class="content">
             <h1 class="section-title">Инвестиции в Монедо</h1>
             <p class="subtitle">Высокая процентная ставка и гарантированный доход</p>
@@ -144,20 +144,21 @@
                 <a href="/">Свидетельство ЦБ РФ</a>
             </div>
         </div>
-    </div>
-    <div class="monedo-form" id="monedo-form-block">
+    </section>
+    <section class="monedo-form" id="monedo-form-block">
         <div class="container">
             <div class="content">
-                <h1 class="section-title black-title text-align-center">Связаться</h1>
+                <h2 class="section-title black-title text-align-center">Связаться</h2>
                 <form action="" class="form" id="monedo-form">
                     <label class="field field-input">
                         <input class="input-text placeholder validate" placeholder="Ваше имя" data-placeholder="Ваше имя" data-validate="required" id="call-feedback_name"
                                name="f_name" type="text">
                         <p class="error-message"></p>
                     </label>
-                    <label class="field field-input ">
+                    <label class="field field-input field-with-icon">
                         <input class="input-text placeholder validate input-mask" data-mask_tpl="phone_plus7" data-placeholder="Номер телефона" data-validate="number_phone-required" id="call-feedback_phone"
                                name="f_phone" type="text" value="" inputmode="text">
+                        <img src="/img/monedo/russia.svg" class="icon" alt="">
                         <p class="error-message"></p>
                     </label>
                     <label class="field field-input ">
@@ -171,6 +172,7 @@
                             Я прочитал и принимаю <a href="#">политику
                             конфиденциальности</a>
                         </label>
+                        <p class="error-message"></p>
                     </div>
 
                     <input type="text" value="9" name="f_term" hidden id="calculator-monedo-term">
@@ -180,11 +182,155 @@
 
                     <button type="submit" class="btn btn-blue btn-width">Свяжитесь со мной</button>
 
+                    <div class="monedo-form-message" id="monedo-form-message">
+                        <div class="content">
+                            <span class="close monedo-close"></span>
+                            <h2 class="title"></h2>
+                            <div class="text">
+
+                            </div>
+                            <a href="" class="btn btn-blue monedo-close">Закрыть</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
 
-    </div>
+    </section>
+    <section class="monedo-faq">
+        <div class="container">
+            <h1 class="section-title text-align-center margin-bottom">FAQ</h1>
+
+            <div class="info__wrap info__wrap-monedo">
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Кто может инвестировать?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                Граждане РФ
+                            </li>
+                            <li>
+                                Физические лица или индивидуальные предприниматели
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Что нужно, чтобы инвестировать?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                Связаться с нами, используя форму обратной связи или позвонив по телефону <b><a href="tel:74993993245">+7 (499) 399 32 45</a></b>, указав желаемую сумму и срок
+                                инвестирования.
+                            </li>
+                            <li>
+                                Ознакомиться с нашими условиями, изучив Договор.
+                            </li>
+                            <li>
+                                Мы поможем выбрать инвестиционный план и обсудим условия, исходя из срока и суммы инвестиций.
+                            </li>
+                            <li>
+                                Проценты выплачиваются ежемесячно, в последний рабочий день месяца, без капитализации. Сумма займа будет возвращена в конце инвестиционного периода.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Какая минимальная сумма для инвестирования?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>Согласно российскому законодательству, минимальная сумма инвестиций равна 1 500 000,00 руб</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Могу ли я увеличить сумму инвестиций?
+</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>Да. Однако, минимальная сумма дополнительного вклада должна составлять не менее 500 000 руб.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Какие условия для индивидуальных предпринимателей?
+</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>Для ИП годовая процентная ставка снижается на 1%, в связи с тем, что ИП самостоятельно выплачивает налоги.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Кто платит налоги?
+</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>
+                            Если вы инвестируете как физическое лицо, то мы за вас платим налоги. Также по запросу мы предоставляем справку 2-НДФЛ за желаемый период. <br>
+                            Если вы инвестируете, как ИП, то обязанности по уплате НДФЛ остаются за вами.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Где я могу посмотреть отчетность?
+</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>
+                            Всю опубликованную отчетность вы можете найти <a href="/">здесь</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Станьте нашим Агентом!</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <p>
+                            Вы хотите заработать, и у вас есть знакомые, друзья, родственники, которые хотят инвестировать? В “Монедо” открыта агентская программа по привлечению инвесторов! <br>
+                            За дополнительной информацией обращайтесь к нам по телефону <b><a href="tel:74993993245">+7 (499) 399 32 45</a></b>  или заполните форму обратной связи.
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <span class="h6">Как изменить реквизиты в уже действующем договоре?</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12"><path fill-rule="nonzero" d="M.75 6.74h11.69l-4.02 4c-.3.28-.3.75 0 1.04.29.3.76.3 1.06 0l5.3-5.25a.74.74 0 00.1-.12l.03-.06.03-.07.03-.07.02-.06L15 6l-.01-.15-.02-.06-.03-.07c0-.03-.02-.05-.04-.08 0-.02-.01-.03-.03-.05a.74.74 0 00-.09-.12L9.48.22a.75.75 0 00-1.06 0c-.3.29-.3.76 0 1.05l4.02 3.99H.75A.75.75 0 000 6c0 .41.34.74.75.74z"></path></svg>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                Если у вас сменился паспорт или место регистрации, заполните “<a href="/">Заявление на смену персональных данных</a>” и отправьте на нашу почту <a
+                                    href="mailto:investors@kredito24.ru">investors@kredito24.ru</a> , прикрепив актуальные сканы вашего
+                                паспорта.
+                            </li>
+                            <li>
+                                Если вы хотите изменить банковские реквизиты, по которым происходит выплата процентов, заполните “<a href="/">Заявление на смену реквизитов</a>” и отправьте на нашу почту <a
+                                    href="mailto:investors@kredito24.ru">investors@kredito24.ru</a>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="monedo-footer">
         <div class="container">
             <div class="top">

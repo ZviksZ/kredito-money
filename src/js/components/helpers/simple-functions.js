@@ -35,13 +35,3 @@ export function initMonedoMenu() {
       $('html').removeClass('show-menu');
    });
 }
-export function initMonedoForm() {
-   $('#monedo-form button[type="submit"]').on('click', function(e) {
-      let $form = $('#monedo-form')
-      validateForm($form, false)
-
-      if ($form.find('.error').length === 0) {
-         $form.submit();
-      }
-   });
-}

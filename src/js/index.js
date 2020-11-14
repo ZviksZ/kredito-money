@@ -1,13 +1,14 @@
-import * as $                                                from 'jquery';
-import { Calculator, CalculatorMonedo }                      from './components/calculator';
-import { CustomSelect }                                      from './components/custom-select';
-import { CustomTabs }                                                                            from './components/custom-tabs';
-import { FeedForm }                                                                              from './components/feed-form';
-import { initMaskedInput, initMoneyInput, initPlaceholders }                                     from './components/form';
-import { Header }                                                                                from './components/header';
-import { HeaderMenu }                                                                            from './components/header-menu';
+import * as $ from 'jquery';
+import { Calculator, CalculatorMonedo } from './components/calculator';
+import { CustomSelect } from './components/custom-select';
+import { CustomTabs } from './components/custom-tabs';
+import { FeedForm } from './components/feed-form';
+import { initMaskedInput, initMoneyInput, initPlaceholders } from './components/form';
+import { Header } from './components/header';
+import { HeaderMenu } from './components/header-menu';
 import { initInfoTabs, initInteriorMobileBtn, initMonedoForm, initMonedoHeader, initMonedoMenu } from './components/helpers/simple-functions.js';
-import { ModalWindowFullScreen }                                                                 from './components/modal-window-fullscreen';
+import { ModalWindowFullScreen } from './components/modal-window-fullscreen';
+import { MonedoForm } from './components/monedo';
 window.jQuery = require('jquery');
 
 $(function() {
@@ -39,10 +40,10 @@ $(function() {
    initInfoTabs();
    initInteriorMobileBtn();
 
-
    initMonedoHeader();
    initMonedoMenu();
-   initMonedoForm();
+
+   new MonedoForm();
 
    setTimeout(() => {
       $('.preloader').addClass('preloader-hide');
