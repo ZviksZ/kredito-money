@@ -22,12 +22,13 @@ export class MonedoForm {
       this.$form.on('submit', this.onSubmit);
       $('#monedo-form_policy').on('change', this.policyChecked);
 
-      this.$form.find('.monedo-close').on('click', () => {
+      this.$form.find('.monedo-close').on('click', e => {
+         e.preventDefault();
          this.$form.removeClass('show-message');
       });
    };
 
-   policyChecked = (e) => {
+   policyChecked = e => {
       if ($(e.target).prop('checked')) {
          $('#monedo-form_policy')
             .closest('.policy')
@@ -39,7 +40,7 @@ export class MonedoForm {
             .find('.error-message')
             .text('Согласие обязательно');
       }
-   }
+   };
 
    onSubmit = e => {
       e.preventDefault();
@@ -74,31 +75,21 @@ export class MonedoForm {
    successForm = () => {
       this.clearForm(this.$form);
 
-
-      this.$formMessage
-         .find('.title')
-         .text('Спасибо за ваше доверие');
-      this.$formMessage
-         .find('.text')
-         .text('Мы искренне благодарны вам за то, что выбрали нас в качестве вашего делового партнера, давая нам возможность расти.');
+      this.$formMessage.find('.title').text('Спасибо за ваше доверие');
+      this.$formMessage.find('.text').text('Мы искренне благодарны вам за то, что выбрали нас в качестве вашего делового партнера, давая нам возможность расти.');
 
       this.$form.addClass('show-message');
    };
 
    errorForm = () => {
-      this.$formMessage
-         .find('.title')
-         .text('Отправка не удалась');
-      this.$formMessage
-         .find('.text')
-         .text('Что-то пошло не так. Попробуйте повторить отправку формы.');
+      this.$formMessage.find('.title').text('Отправка не удалась');
+      this.$formMessage.find('.text').text('Что-то пошло не так. Попробуйте повторить отправку формы.');
 
       this.$form.addClass('show-message');
 
       setTimeout(() => {
          this.$form.removeClass('show-message');
-      }, 2500)
-
+      }, 2500);
    };
 
    clearForm = form => {

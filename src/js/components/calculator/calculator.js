@@ -14,6 +14,7 @@ export class Calculator {
       this.$termText = $('#calculator-term');
       this.$termInput = $('#calculator-term-input');
       this.$sumRangeInput = $('#calculator-range-value');
+      this.$sendBtn = $('#calculator-send-btn');
 
       this.sumSlider = this.initSumRangeSlider();
       this.termRangeSlider = this.initTermRangeSlider();
@@ -69,6 +70,8 @@ export class Calculator {
       $('#calculator-sum-date__input').val(dateString);
       $('#calculator-sum-total').text();
       $('#calculator-sum-total__input').text();
+
+      this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${sumVal}&number_of_installments=${termVal}&product_type=K24`)
    };
 
    getDateString = (term) => {

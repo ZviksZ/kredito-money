@@ -75,6 +75,7 @@ export class CalculatorMonedo {
 
       $('#calculator-monedo-income__text').text(numberFormat(income, 0, ' ') + ' ₽');
       $('#calculator-monedo-income').val(income);
+      $('#calculator-monedo-sum').val(sumVal);
    };
 
    initSumRangeSlider = () => {
