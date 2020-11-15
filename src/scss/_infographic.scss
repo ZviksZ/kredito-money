@@ -45,5 +45,14 @@
     }
 }
 
+.animate-block {
+    opacity: 0;
+    transition: 0.4s ease;
+    transform: translateY(100%);
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 

@@ -11,7 +11,7 @@ export class Effects {
       for (const section of sections) {
          if (
             section.getBoundingClientRect().top <= window.innerHeight * 0.75
-            && section.getBoundingClientRect().top > 0
+            && section.getBoundingClientRect().top >= 0
          ) {
             section.classList.add('visible');
          }

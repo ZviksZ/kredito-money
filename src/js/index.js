@@ -1,11 +1,12 @@
-import * as $ from 'jquery';
-import { Calculator, CalculatorMonedo } from './components/calculator';
-import { CustomSelect } from './components/custom-select';
-import { CustomTabs }                                                                            from './components/custom-tabs';
-import { FeedForm }                                                                              from './components/feed-form';
-import { initMaskedInput, initMoneyInput, initPlaceholders }                                     from './components/form';
-import { Header }                                                                                from './components/header';
-import { HeaderMenu }                                                                            from './components/header-menu';
+import * as $                                                from 'jquery';
+import { Calculator, CalculatorMonedo }                      from './components/calculator';
+import { CustomSelect }                                      from './components/custom-select';
+import { CustomTabs }                                        from './components/custom-tabs';
+import { Effects }                                           from './components/effects';
+import { FeedForm }                                          from './components/feed-form';
+import { initMaskedInput, initMoneyInput, initPlaceholders } from './components/form';
+import { Header }                                            from './components/header';
+import { HeaderMenu }                                        from './components/header-menu';
 import { initInfoTabs, initInteriorMobileBtn } from './components/helpers/simple-functions.js';
 import { ModalWindowFullScreen }                                                                 from './components/modal-window-fullscreen';
 import { MonedoForm, MonedoPage }                                                                from './components/monedo';
@@ -15,6 +16,8 @@ $(function() {
    // главное меню на мобильном
    new Header();
    new HeaderMenu();
+
+   new Effects()
 
    // инициализация плагина кастомных селектов
    new CustomSelect();
@@ -45,5 +48,8 @@ $(function() {
 
    setTimeout(() => {
       $('.preloader').addClass('preloader-hide');
+   }, 200);
+   setTimeout(() => {
+      $('.monedo-preloader').addClass('monedo-preloader-hide');
    }, 200);
 });

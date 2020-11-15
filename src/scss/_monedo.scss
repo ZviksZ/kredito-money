@@ -878,6 +878,20 @@
         }
     }
 }
+.monedo-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $colorWhite;
+    z-index: 9999;
+    transition: 0.1s;
+    &.monedo-preloader-hide {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
 .show-menu {
     body {
         overflow: hidden;

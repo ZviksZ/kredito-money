@@ -58,7 +58,7 @@
     border-radius: 100px;
     border: 2px solid #89CAEA;
     box-sizing: border-box;
-    cursor: default;
+    cursor: pointer;
     z-index: 1;
     top: -1px;
 
@@ -242,6 +242,7 @@
         border: none;
         border-radius: 50%;
         box-shadow: none;
+
 
         &.state_hover, &:hover {
             background-color: #FFD526;

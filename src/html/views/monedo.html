@@ -1,6 +1,6 @@
 <% var data = { title: "Monedo | Kredito 24", isMonedo: "true"}; %> <%= _.template(require('./../includes/header.html').default)(data) %>
 
-
+<div class="monedo-preloader"></div>
 <div class="monedo-page">
     <div class="monedo-header">
         <div class="container">
@@ -29,11 +29,11 @@
         <div class="container">
             <div class="monedo-header__margin"></div>
             <nav>
-                <a href="#">Обратная связь</a>
-                <a href="#">FAQ</a>
-                <a href="#">О компании</a>
-                <a href="#">СМИ о нас</a>
-                <a href="#">Сайт Kredito24</a>
+                <a href="#monedo-form-block">Обратная связь</a>
+                <a href="#monedo-faq">FAQ</a>
+                <a href="#monedo-about">О компании</a>
+                <a href="#monedo-media">СМИ о нас</a>
+                <a href="https://www.kredito24.ru/">Сайт Kredito24</a>
             </nav>
             <div class="monedo-footer monedo-footer__black">
                 <div class="top">
@@ -80,8 +80,8 @@
             </div>
         </div>
     </div>
-    <section class="monedo-main" style="background-image: url(/img/monedo/bg.jpg)">
-        <div class="content">
+    <section class="monedo-main " id="monedo-main" style="background-image: url(/img/monedo/bg.jpg)">
+        <div class="content animate-block">
             <h1 class="section-title">Инвестиции в Монедо</h1>
             <p class="subtitle">Высокая процентная ставка и гарантированный доход</p>
             <div class="calculator calculator-monedo" data-settings='{"default":{"price":1500000},"values":{"minPrice":1500000,"maxPrice":10000000}}' id="calculator-monedo">
@@ -147,7 +147,7 @@
     </section>
     <section class="monedo-form" id="monedo-form-block">
         <div class="container">
-            <div class="content">
+            <div class="content animate-block">
                 <h2 class="section-title black-title text-align-center">Связаться</h2>
                 <form action="" class="form" id="monedo-form">
                     <label class="field field-input">
@@ -198,8 +198,8 @@
         </div>
 
     </section>
-    <section class="monedo-faq">
-        <div class="container">
+    <section id="monedo-faq" class="monedo-faq ">
+        <div class="container animate-block">
             <h2 class="section-title text-align-center margin-bottom">FAQ</h2>
 
             <div class="info__wrap info__wrap-monedo">
@@ -332,8 +332,8 @@
             </div>
         </div>
     </section>
-    <section class="monedo-about">
-        <div class="container">
+    <section id="monedo-about" class="monedo-about ">
+        <div class="container animate-block">
             <h2 class="section-title text-align-center margin-bottom">О компании</h2>
             <p class="section-subtitle">
                 Компания ООО МФК “Монедо” является частью немецкого холдинга Monedo Holding GmbH (ранее Kreditech Holding SSL GmbH), работающего в сфере финансовых услуг с 2012 года. Российское подразделение специализируется на выдаче онлайн микрозаймов, а также работает над запуском среднесрочных займов для физических лиц.
@@ -388,8 +388,8 @@
             </div>
         </div>
     </section>
-    <section class="monedo-media">
-        <div class="container">
+    <section id="monedo-media" class="monedo-media ">
+        <div class="container animate-block">
             <h2 class="section-title black-title text-align-center margin-bottom">СМИ о нас</h2>
             <div class="monedo-media__slider-wrap">
                 <div class="monedo-media__slider" id="monedo-media__slider">
@@ -430,7 +430,7 @@
             </div>
         </div>
     </section>
-    <div class="monedo-footer">
+    <div class="monedo-footer ">
         <div class="container">
             <div class="top">
                 <div class="left">
