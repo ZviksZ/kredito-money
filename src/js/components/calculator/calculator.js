@@ -36,26 +36,26 @@ export class Calculator {
          }, 10);
       });
 
-      this.$sumInput.on('input', this.inputChange)
+      this.$sumInput.on('input', this.inputChange);
    };
 
-   inputChange = (e) => {
-      let value = +e.target.value
+   inputChange = e => {
+      let value = +e.target.value;
 
       const initialFeeSlider = $('[name="mortgage_sum_range"]').data('ionRangeSlider');
 
-      let newVal = value
+      let newVal = value;
 
       if (value > this.JSON.values.maxPrice) {
-         newVal = this.JSON.values.maxPrice
+         newVal = this.JSON.values.maxPrice;
       } else if (value < this.JSON.values.minPrice) {
-         newVal = this.JSON.values.minPrice
+         newVal = this.JSON.values.minPrice;
       }
 
       initialFeeSlider.update({
          from: newVal
       });
-   }
+   };
 
    getCalculatorSummary = () => {
       let sumVal = this.$sumRangeInput.val();
@@ -71,17 +71,17 @@ export class Calculator {
       $('#calculator-sum-total').text();
       $('#calculator-sum-total__input').text();
 
-      this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${sumVal}&number_of_installments=${termVal}&product_type=K24`)
+      this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${sumVal}&number_of_installments=${termVal}&product_type=K24`);
    };
 
-   getDateString = (term) => {
+   getDateString = term => {
       let currentDate = new Date();
       let newDate = new Date();
       let termValNum = +term;
       newDate.setDate(currentDate.getDate() + termValNum);
 
       return newDate.getDate() + '.' + (newDate.getMonth() + 1) + '.' + newDate.getFullYear();
-   }
+   };
 
    initSumRangeSlider = () => {
       const mortgageSumInput = this.$sumInput;
@@ -110,14 +110,13 @@ export class Calculator {
          onChange: data => {
             mortgageSumInput[0].value = data.from_pretty;
             this.$sumRangeInput[0].value = data.from_pretty;
-
          },
-         onUpdate: (data) => {
+         onUpdate: data => {
             this.$sumRangeInput[0].value = data.from_pretty;
             setTimeout(() => {
                this.getCalculatorSummary();
             }, 10);
-         },
+         }
       });
    };
 

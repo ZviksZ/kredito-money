@@ -1,5 +1,5 @@
-import * as $              from 'jquery';
-import Swiper              from 'swiper/js/swiper.min';
+import * as $ from 'jquery';
+import Swiper from 'swiper/js/swiper.min';
 
 export class MonedoPage {
    constructor() {

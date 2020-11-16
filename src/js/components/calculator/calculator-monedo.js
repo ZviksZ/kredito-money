@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import { numberFormat, declOfNum } from '../helpers/index';
+import { numberFormat } from '../helpers/index';
 import 'ion-rangeslider';
 
 export class CalculatorMonedo {
@@ -68,12 +68,11 @@ export class CalculatorMonedo {
 
       let income = Math.ceil((((sumVal / 100) * percent) / 12) * term);
 
-      $('#calculator-monedo-term').val(term);
-
       $('#calculator-monedo-percent__text').text(percent + '% *');
-      $('#calculator-monedo-percent').val(percent);
-
       $('#calculator-monedo-income__text').text(numberFormat(income, 0, ' ') + ' ₽');
+
+      $('#calculator-monedo-term').val(term);
+      $('#calculator-monedo-percent').val(percent);
       $('#calculator-monedo-income').val(income);
       $('#calculator-monedo-sum').val(sumVal);
    };
