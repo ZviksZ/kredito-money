@@ -78,17 +78,17 @@ export class MonedoForm {
       this.$formMessage.find('.title').text('Спасибо за ваше доверие');
       this.$formMessage.find('.text').text('Мы искренне благодарны вам за то, что выбрали нас в качестве вашего делового партнера, давая нам возможность расти.');
 
-      this.$form.addClass('show-message');
+      this.$formMessage.addClass('show-message');
    };
 
    errorForm = () => {
       this.$formMessage.find('.title').text('Отправка не удалась');
       this.$formMessage.find('.text').text('Что-то пошло не так. Попробуйте повторить отправку формы.');
 
-      this.$form.addClass('show-message');
+      this.$formMessage.addClass('show-message');
 
       setTimeout(() => {
-         this.$form.removeClass('show-message');
+         this.$formMessage.removeClass('show-message');
       }, 2500);
    };
 

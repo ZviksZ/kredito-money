@@ -5,12 +5,19 @@
     * {
         font-family: $fontSecondary !important;
     }
+    section {
+        overflow: hidden;
+    }
     .section-title {
         font-size: 50px;
         line-height: 60px;
         color: $colorWhite;
         &.black-title {
             color: #2D2D2D;
+        }
+        @include mobile {
+            font-size: 36px;
+            line-height: 46px;
         }
     }
     .section-subtitle {
@@ -20,6 +27,10 @@
         text-align: center;
         &.black-subtitle {
             color: #2D2D2D;
+        }
+        @include mobile {
+            font-size: 20px;
+            line-height: 26px;
         }
     }
     .btn {
@@ -45,6 +56,11 @@
                 color: $colorBlueDarken;
                 opacity: 1;
             }
+        }
+        @include mobile {
+            padding: 12px 14px;
+            font-size: 14px;
+            line-height: 17px;
         }
         &.btn-blue {
             background: $colorBlueDarken;
@@ -77,6 +93,15 @@
         background: transparent;
         z-index: 99;
         transition: 0.3s ease;
+        @include desktop-small {
+            height: 90px;
+        }
+        @include mobile {
+            height: 90px;
+        }
+        @include only-mobile {
+            height: 80px;
+        }
         .monedo-header__wrap {
             display: flex;
             align-items: center;
@@ -109,6 +134,7 @@
                 margin-left: 60px;
                 cursor: pointer;
                 overflow: hidden;
+                padding-bottom: 6px;
                 @include desktop {
                     &:hover {
                         opacity: 0.7;
@@ -142,11 +168,47 @@
                     }
                 }
             }
+
+            @include mobile {
+                .phone {
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: $colorWhite;
+                    margin-right: 30px;
+                }
+                .burger {
+                    margin-left: 20px;
+                }
+            }
+            @include only-mobile {
+                .phone {
+                    display: none;
+                }
+                .btn {
+                    display: none;
+                }
+                .burger {
+                    margin-left: auto;
+                }
+            }
         }
     }
     .monedo-header__margin {
         width: 100%;
         height: 129px;
+        min-height: 129px;
+        @include desktop-small {
+            height: 90px;
+            min-height: 90px;
+        }
+        @include mobile {
+            height: 90px;
+            min-height: 90px;
+        }
+        @include only-mobile {
+            height: 80px;
+            min-height: 80px;
+        }
     }
     .monedo-menu {
         position: fixed;
@@ -158,14 +220,36 @@
         background: $colorWhite;
         transition: 0.3s ease;
         transform: translateY(100%);
+        overflow: auto;
         .container {
             display: flex;
             flex-direction: column;
+        }
+        .phone {
+            display: none;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            color: $colorBlack;
+            margin-right: 60px;
+            span {
+                font-weight: 400;
+            }
+            @include only-mobile {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                span {
+                    display: block;
+                    width: 100%;
+                }
+            }
         }
         nav {
             display: flex;
             flex-direction: column;
             padding: 50px 0;
+
             a {
                 font-weight: 700;
                 font-size: 50px;
@@ -174,6 +258,19 @@
             }
             a + a {
                 margin-top: 5px;
+            }
+            @include desktop-small {
+                padding: 20px 0;
+                a {
+                    font-size: 40px;
+                    line-height: 52px;
+                }
+            }
+            @include mobile {
+                a {
+                    font-size: 40px;
+                    line-height: 52px;
+                }
             }
         }
         .monedo-footer {
@@ -190,6 +287,16 @@
         -webkit-background-size: cover;
         background-size: cover;
         text-align: center;
+        padding-top: 100px;
+        @include desktop-small {
+            padding-top: 40px;
+        }
+        @include mobile {
+            padding-top: 40px;
+        }
+        @include only-mobile {
+            padding-top: 20px;
+        }
         .content {
             width: 100%;
             max-width: 710px;
@@ -328,6 +435,60 @@
                     margin-top: 9px;
                 }
             }
+
+            @include mobile {
+                background: #06038d;
+                .h4 {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+                .calculator-item {
+                    .top {
+                        .text {
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                        input {
+                            font-size: 14px;
+                            max-width: 112px;
+                        }
+                        span {
+                            font-size: 16px;
+                            line-height: 24px;
+                            top: 9px;
+                        }
+                    }
+                    .calculator-min,
+                    .calculator-max {
+                        font-size: 13px;
+                    }
+                }
+
+            }
+            @include only-mobile {
+                .calculator-monedo__term {
+                    flex-wrap: wrap;
+                    & > span {
+                        display: block;
+                        width: 100%;
+                        margin: 10px 0;
+                    }
+                    .item.item-text {
+                        width: 100%;
+                    }
+                }
+                .calculator-monedo__summary {
+                    justify-content: center;
+                    .item {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    .item + .item {
+                        margin-left: 0;
+                        margin-top: 10px;
+                    }
+                }
+            }
         }
 
         .certificate {
@@ -345,6 +506,9 @@
     .monedo-footer {
         background: #09118B;
         padding: 45px 0 35px;
+        @include desktop-small {
+            padding: 25px 0;
+        }
         .img-black {
             display: none;
         }
@@ -356,6 +520,9 @@
             line-height: 22px;
             padding-bottom: 99px;
             color: $colorWhite;
+            @include desktop-small {
+                padding-bottom: 30px;
+            }
             a {
                 font-size: 18px;
                 line-height: 22px;
@@ -379,6 +546,31 @@
                 align-items: center;
                 a {
                     margin-left: 20px;
+                }
+            }
+
+            @include mobile {
+                padding-bottom: 30px;
+                flex-wrap: wrap;
+                .left, .right {
+                    width: 100%;
+                }
+                .right {
+                    margin-top: 20px;
+                }
+            }
+            @include only-mobile {
+                padding-bottom: 8px;
+                .left {
+                    flex-wrap: wrap;
+                    & > span {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    a {
+                        margin-left: 0;
+                    }
                 }
             }
         }
@@ -418,12 +610,20 @@
                     }
                 }
             }
+            @include only-mobile {
+                .right {
+                    display: none;
+                }
+                .left {
+                    width: 100%;
+                }
+            }
         }
 
         &.monedo-footer__black {
             background: $colorWhite;
             .img-white {
-                display: none;
+                display: none !important;
             }
             .img-black {
                 display: flex;
@@ -431,6 +631,15 @@
             .top {
                 padding-bottom: 80px;
                 color: $colorBlack;
+                @include desktop-small {
+                    padding-bottom: 30px;
+                }
+                @include mobile {
+                    padding-bottom: 30px;
+                }
+                @include only-mobile {
+                    padding-bottom: 15px;
+                }
                 a {
                     color: $colorBlueDarken;
                 }
@@ -487,97 +696,6 @@
                 font-weight: 400;
             }
         }
-        .monedo-form-message {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1001;
-            background-color: #0006;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: 0.3s ease;
-            .content {
-                position: relative;
-                padding: 48px 74px;
-                width: 90vw;
-                max-width: 680px;
-                border-radius: 8px;
-                background: $colorWhite;
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 12px 42px 0px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .title {
-                    font-size: 24px;
-                    line-height: 34px;
-                    color: #2d2d2d;
-                    padding: 0px 24px;
-                    text-align: center;
-                }
-                .text {
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: #2d2d2d;
-                    text-align: center;
-                    margin: 32px 0;
-                }
-                .close {
-                    display: inline-flex;
-                    -webkit-box-pack: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    align-items: center;
-                    position: absolute;
-                    top: 4px;
-                    right: 4px;
-                    width: 25px;
-                    height: 25px;
-                    padding: 8px;
-                    box-sizing: content-box;
-                    cursor: pointer;
-                    transition: 0.2s ease;
-                    &:before,
-                    &:after {
-                        display: block;
-                        content: '';
-                        width: 24px;
-                        height: 3px;
-                        position: absolute;
-                        background: #2d2d2d;
-                        transition: all 400ms ease 0s;
-                        border-radius: 10px;
-                    }
-                    &:before {
-                        transform: rotate(-45deg);
-                    }
-                    &:after {
-                        transform: rotate(45deg);
-                    }
-                    @include desktop {
-                        &:hover {
-                            &:before {
-                                transform: rotate(-135deg);
-                            }
-                            &:after {
-                                transform: rotate(135deg);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .show-message {
-            .monedo-form-message {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
     }
     .monedo-faq {
         background: $colorBlueDarken;
@@ -607,10 +725,16 @@
                         transform: rotate(90deg);
                         transition: 0.2s ease;
                     }
+                    @include only-mobile {
+                        padding: 20px 10px;
+                    }
                 }
                 .content {
                     padding: 0 40px 20px;
                     margin-top: 0;
+                    @include only-mobile {
+                        padding: 0 10px 20px;
+                    }
                     p, li {
                         font-size: 18px;
                         line-height: 22px;
@@ -673,6 +797,9 @@
         -webkit-background-size: cover;
         background-size: cover;
         padding: 66px 0 78px;
+        @include mobile {
+            padding: 40px 0 50px;
+        }
         .monedo-slider__wrap {
             position: relative;
         }
@@ -681,6 +808,9 @@
             overflow: hidden;
             @include mobile {
                 margin: 130px 0 60px;
+            }
+            @include only-mobile {
+                margin: 70px 0 50px;
             }
             .swiper-slide {
                 width: calc(33.33333333333% - 92px) !important;
@@ -724,6 +854,7 @@
             justify-content: center;
             @include mobile {
                 flex-wrap: wrap;
+                justify-content: flex-start;
             }
             .item {
                 display: flex;
@@ -775,11 +906,24 @@
     }
     .monedo-media {
         padding: 45px 0 98px;
+        @include mobile {
+            padding: 35px 0 60px;
+        }
+        @include only-mobile {
+            padding: 25px 0 50px;
+        }
         .monedo-media__slider-wrap {
+            position: relative;
             margin-top: 70px;
             padding: 0 45px;
             .swiper-button {
-                top: 50%;
+                top: calc(50% - 40px);
+            }
+            @include mobile {
+                padding: 0;
+                .swiper-button {
+                    top: 0;
+                }
             }
         }
         .monedo-media__slider {
@@ -800,6 +944,10 @@
                     line-height: 28px;
                     color: #2D2D2D;
                     text-align: center;
+                    @include only-mobile {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
                 }
 
             }
@@ -877,6 +1025,102 @@
             }
         }
     }
+
+    .monedo-form-message {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1001;
+        background-color: #0006;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: 0.3s ease;
+        &.show-message {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .content {
+            position: relative;
+            padding: 48px 74px;
+            width: 90vw;
+            max-width: 680px;
+            border-radius: 8px;
+            background: $colorWhite;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 12px 42px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include mobile {
+                width: 100%;
+                padding: 48px;
+            }
+            @include only-mobile {
+                padding: 48px 10px;
+            }
+            .title {
+                font-size: 24px;
+                line-height: 34px;
+                color: #2d2d2d;
+                padding: 0px 24px;
+                text-align: center;
+            }
+            .text {
+                font-size: 16px;
+                line-height: 24px;
+                color: #2d2d2d;
+                text-align: center;
+                margin: 32px 0;
+            }
+            .close {
+                display: inline-flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                width: 25px;
+                height: 25px;
+                padding: 8px;
+                box-sizing: content-box;
+                cursor: pointer;
+                transition: 0.2s ease;
+                &:before,
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 24px;
+                    height: 3px;
+                    position: absolute;
+                    background: #2d2d2d;
+                    transition: all 400ms ease 0s;
+                    border-radius: 10px;
+                }
+                &:before {
+                    transform: rotate(-45deg);
+                }
+                &:after {
+                    transform: rotate(45deg);
+                }
+                @include desktop {
+                    &:hover {
+                        &:before {
+                            transform: rotate(-135deg);
+                        }
+                        &:after {
+                            transform: rotate(135deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 .monedo-preloader {
     position: fixed;
@@ -941,3 +1185,4 @@
     }
 
 }
+
