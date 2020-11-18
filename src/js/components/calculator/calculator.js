@@ -58,11 +58,11 @@ export class Calculator {
    };
 
    getCalculatorSummary = () => {
-      let sumVal = this.$sumRangeInput.val();
-      let termVal = this.$termInput.val();
+      let sumVal = parseInt(this.$sumRangeInput.val());
+      let termVal = parseInt(this.$termInput.val());
       let dateString = this.getDateString(termVal);
-	  let percentPerDay = 0.1;
-	  let totalVal = sumVal+sumVal*(parseInt(termVal)*percentPerDay);
+	  let percentPerDay = 0.01;
+	  let totalVal = sumVal+sumVal*(termVal*percentPerDay);
 
       $('#calculator-sum-get').text(numberFormat(sumVal, 0, '', ' ') + ' ₽');
       $('#calculator-sum-get__input').val(sumVal);
