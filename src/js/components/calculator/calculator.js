@@ -61,6 +61,8 @@ export class Calculator {
       let sumVal = this.$sumRangeInput.val();
       let termVal = this.$termInput.val();
       let dateString = this.getDateString(termVal);
+	  let percentPerDay = 0.1;
+	  let totalVal = sumVal+sumVal*(parseInt(termVal)*percentPerDay);
 
       $('#calculator-sum-get').text(numberFormat(sumVal, 0, '', ' ') + ' ₽');
       $('#calculator-sum-get__input').val(sumVal);
@@ -68,8 +70,8 @@ export class Calculator {
       $('#calculator-sum-term__input').val(termVal);
       $('#calculator-sum-date').text(dateString);
       $('#calculator-sum-date__input').val(dateString);
-      $('#calculator-sum-total').text();
-      $('#calculator-sum-total__input').text();
+      $('#calculator-sum-total').text(numberFormat(totalVal, 0, '', ' ') + ' ₽');
+      $('#calculator-sum-total__input').val(totalVal);
 
       this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${sumVal}&number_of_installments=${termVal}&product_type=K24`);
    };
