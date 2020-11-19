@@ -66,10 +66,10 @@ export class CalculatorMonedo {
       let percent = +this.$calc.find('.calculator-monedo__term .item.active').attr('data-percent');
       let term = +this.$calc.find('.calculator-monedo__term .item.active').attr('data-term');
 
-      let income = Math.ceil((((sumVal / 100) * percent) / 12) * term);
+      let income = Math.ceil(sumVal / 100 * percent / 12 * term);
 
       $('#calculator-monedo-percent__text').text(percent + '% *');
-      $('#calculator-monedo-income__text').text(numberFormat(income, 0, ' ') + ' ₽');
+      $('#calculator-monedo-income__text').text(numberFormat(income, 0, '', ' ') + ' ₽');
 
       $('#calculator-monedo-term').val(term);
       $('#calculator-monedo-percent').val(percent);
