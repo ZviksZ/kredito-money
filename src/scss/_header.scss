@@ -58,9 +58,16 @@
                         height: 15px;
                         margin-left: 6px;
                     }
+                    @include desktop-small {
+                        font-size: 16px;
+                        line-height: 17px;
+                    }
                 }
                 .item + .item {
                     margin-left: 38px;
+                    @include desktop-small {
+                        margin-left: 18px;
+                    }
                 }
             }
         }

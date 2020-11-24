@@ -20,6 +20,10 @@ h1, .h1 {
     font-size: 62px;
     line-height: 78px;
     color: $colorText;
+    @include desktop-small {
+        font-size: 52px;
+        line-height: 68px;
+    }
 }
 h2, .h2 {
     font-weight: 600;
