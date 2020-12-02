@@ -125,13 +125,21 @@
         @include mobile {
             flex-wrap: wrap;
             margin: 0 -17px;
+            .info__wrap {
+                .content {
+                    padding: 0 !important;
+                }
+            }
             .interior-main {
                 width: 100%;
                 margin: 0;
-                height: 60vh;
+                height: auto;
                 overflow: hidden;
                 .content {
                     padding: 0 17px;
+                }
+                .interior-mobile {
+                    display: none !important;
                 }
             }
             .interior-calc {

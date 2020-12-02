@@ -63,10 +63,12 @@ export class CalculatorMonedo {
 
    getCalculatorSummary = () => {
       let sumVal = +this.$sumRangeInput.val();
+      let roundedSum = Math.round(sumVal / 500000) * 500000;
+
       let percent = +this.$calc.find('.calculator-monedo__term .item.active').attr('data-percent');
       let term = +this.$calc.find('.calculator-monedo__term .item.active').attr('data-term');
 
-      let income = Math.ceil(sumVal / 100 * percent / 12 * term);
+      let income = Math.ceil(roundedSum / 100 * percent / 12 * term);
 
       $('#calculator-monedo-percent__text').text(percent + '% *');
       $('#calculator-monedo-income__text').text(numberFormat(income, 0, '', ' ') + ' ₽');
@@ -74,7 +76,7 @@ export class CalculatorMonedo {
       $('#calculator-monedo-term').val(term);
       $('#calculator-monedo-percent').val(percent);
       $('#calculator-monedo-income').val(income);
-      $('#calculator-monedo-sum').val(sumVal);
+      $('#calculator-monedo-sum').val(roundedSum);
    };
 
    initSumRangeSlider = () => {
@@ -97,7 +99,7 @@ export class CalculatorMonedo {
          min: this.JSON.values.minPrice,
          max: this.JSON.values.maxPrice,
          from: this.JSON.default.price,
-         step: 100,
+         step: 500000,
          drag_interval: true,
          prettify_enabled: true,
          prettify_separator: ' ',

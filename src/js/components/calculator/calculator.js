@@ -59,13 +59,16 @@ export class Calculator {
 
    getCalculatorSummary = () => {
       let sumVal = parseInt(this.$sumRangeInput.val());
+      let roundedSum = Math.round(sumVal / 100) * 100;
+
       let termVal = parseInt(this.$termInput.val());
       let dateString = this.getDateString(termVal);
-	  let percentPerDay = 0.01;
-	  let totalVal = sumVal+sumVal*(termVal*percentPerDay);
+      let percentPerDay = 0.01;
 
-      $('#calculator-sum-get').text(numberFormat(sumVal, 0, '', ' ') + ' ₽');
-      $('#calculator-sum-get__input').val(sumVal);
+      let totalVal = roundedSum + roundedSum * (termVal * percentPerDay);
+
+      $('#calculator-sum-get').text(numberFormat(roundedSum, 0, '', ' ') + ' ₽');
+      $('#calculator-sum-get__input').val(roundedSum);
       $('#calculator-sum-term').text(termVal + ` ${declOfNum(termVal, ['день', 'дня', 'дней'])}`);
       $('#calculator-sum-term__input').val(termVal);
       $('#calculator-sum-date').text(dateString);
@@ -73,7 +76,7 @@ export class Calculator {
       $('#calculator-sum-total').text(numberFormat(totalVal, 0, '', ' ') + ' ₽');
       $('#calculator-sum-total__input').val(totalVal);
 
-      this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${sumVal}&number_of_installments=${termVal}&product_type=K24`);
+      this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${roundedSum}&number_of_installments=${termVal}&product_type=K24`);
    };
 
    getDateString = term => {
