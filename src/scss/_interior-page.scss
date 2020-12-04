@@ -121,6 +121,38 @@
             margin: 0 12px;
             width: 392px;
             min-width: 392px;
+            .interior-categories {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 30px;
+                @include mobile {
+                    width: 100%;
+                }
+                .title {
+                    font-size: 20px;
+                    line-height: 29px;
+                    font-weight: 600;
+                }
+                .list {
+                    display: flex;
+                    flex-direction: column;
+                    padding-left: 8px;
+
+                    a {
+                        font-family: $fontBase;
+                        font-size: 16px;
+                        line-height: 34px;
+                        font-weight: 400;
+                        color: $colorBlueDark;
+                        transition: 0.2s ease;
+                        @include desktop {
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
         }
         @include mobile {
             flex-wrap: wrap;
@@ -149,6 +181,7 @@
                 min-width: auto;
                 display: flex;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             &.show-content {
                 .interior-main {
