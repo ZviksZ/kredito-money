@@ -37,7 +37,21 @@ export class Calculator {
       });
 
       this.$sumInput.on('input', this.inputChange);
+      this.$sumInput.on('blur', this.getRoundedValue);
    };
+
+   getRoundedValue = (e) => {
+      let sumVal = parseInt($(e.currentTarget).val());
+      let roundedSum = Math.round(sumVal / 100) * 100;
+
+      if (sumVal > this.JSON.values.maxPrice) {
+         roundedSum = this.JSON.values.maxPrice;
+      } else if (sumVal < this.JSON.values.minPrice) {
+         roundedSum = this.JSON.values.minPrice;
+      }
+
+      $(e.currentTarget).val(roundedSum)
+   }
 
    inputChange = e => {
       let value = +e.target.value;
@@ -75,6 +89,8 @@ export class Calculator {
       $('#calculator-sum-date__input').val(dateString);
       $('#calculator-sum-total').text(numberFormat(totalVal, 0, '', ' ') + ' ₽');
       $('#calculator-sum-total__input').val(totalVal);
+
+      //this.$sumInput.val(roundedSum)
 
       this.$sendBtn.attr('href', `https://new.kredito24.ru/entry?total_amount=${roundedSum}&number_of_installments=${termVal}&product_type=K24`);
    };

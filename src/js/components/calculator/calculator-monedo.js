@@ -28,9 +28,23 @@ export class CalculatorMonedo {
       });
 
       this.$sumInput.on('input', this.inputChange);
+      this.$sumInput.on('blur', this.getRoundedValue);
 
       this.$calc.find('.calculator-monedo__term .item').on('click', this.changeTerm);
    };
+
+   getRoundedValue = (e) => {
+      let sumVal = parseInt($(e.currentTarget).val());
+      let roundedSum = Math.round(sumVal / 500000) * 500000;
+
+      if (sumVal > this.JSON.values.maxPrice) {
+         roundedSum = this.JSON.values.maxPrice;
+      } else if (sumVal < this.JSON.values.minPrice) {
+         roundedSum = this.JSON.values.minPrice;
+      }
+
+      $(e.currentTarget).val(roundedSum)
+   }
 
    changeTerm = e => {
       e.preventDefault();
